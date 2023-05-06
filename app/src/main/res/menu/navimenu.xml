@@ -4,7 +4,7 @@
     <item android:title="Exercises"
         android:icon="@drawable/naviexercise"/>
     <item android:title="Calculation"
-        android:icon="@drawable/naviCalculate"/>
+        android:icon="@drawable/navicalculate"/>
     <item android:title="Profile"
-        android:icon="@drawable/naviProfil"/>
+        android:icon="@drawable/naviprofile"/>
 </menu>

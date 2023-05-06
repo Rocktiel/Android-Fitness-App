@@ -8,7 +8,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
-        app:itemTextColor="@color/white"
+        app:itemTextColor="#282828"
         app:itemIconSize="40dp"
         app:itemIconTint="@color/black"
         app:menu="@menu/navimenu"
