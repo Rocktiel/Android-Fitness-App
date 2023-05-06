@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Kayit_Olma"
+    android:background="@drawable/arka">
+
+    <EditText
+        android:id="@+id/username"
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="230dp"
+        android:ems="10"
+        android:hint="Enter User Name"
+        android:textColorHint="#EAEBED"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"
+        android:background="@drawable/edit_text_tasarim"
+        android:drawableRight="@drawable/ic_action_name"
+        android:paddingHorizontal="10dp"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="200dp"
+        android:text="User Name"
+        android:textSize="20dp"
+        android:fontFamily="@font/aa"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:paddingLeft="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="330dp"
+        android:ems="10"
+        android:hint="Enter Name"
+        android:textColorHint="#EAEBED"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"
+        android:background="@drawable/edit_text_tasarim"
+        android:drawableRight="@drawable/name"
+        android:paddingHorizontal="10dp"/>
+
+    <EditText
+        android:id="@+id/surname"
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:paddingLeft="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingHorizontal="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="430dp"
+        android:hint="Enter Surname"
+        android:textColorHint="#EAEBED"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"
+        android:ems="10"
+        android:background="@drawable/edit_text_tasarim"
+        android:drawableRight="@drawable/name"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="530dp"
+        android:hint="Enter Password"
+        android:paddingHorizontal="10dp"
+        android:inputType="textPassword"
+        android:textColorHint="#EAEBED"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"
+        android:ems="10"
+        android:background="@drawable/edit_text_tasarim"
+        android:drawableRight="@drawable/password"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="300dp"
+        android:text="Name"
+        android:textSize="20dp"
+        android:fontFamily="@font/aa"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="400dp"
+        android:textSize="20dp"
+        android:text="Surname"
+        android:fontFamily="@font/aa"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="500dp"
+        android:textSize="20dp"
+        android:text="Password"
+        android:fontFamily="@font/aa"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="600dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Age"
+        android:fontFamily="@font/aa"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="600dp"
+        android:fontFamily="@font/aa"
+        android:textSize="20dp"
+        android:text="Weight" />
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="600dp"
+        android:fontFamily="@font/aa"
+        android:textSize="20dp"
+        android:text="Height" />
+
+    <Button
+        android:id="@+id/signup"
+        android:textColor="#282828"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="730dp"
+        android:background="@drawable/tasarim1"
+        android:gravity="center"
+        android:text="Sign Up"
+        android:fontFamily="@font/aa"/>
+
+    <Spinner
+        android:id="@+id/age"
+        android:textColor="#282828"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="630dp"
+        android:background="@drawable/edit_text_tasarim" />
+
+    <Spinner
+        android:id="@+id/weight"
+        android:textColor="#282828"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="630dp"
+        android:background="@drawable/edit_text_tasarim"/>
+
+    <Spinner
+        android:textColor="#282828"
+        android:id="@+id/height"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="630dp"
+        android:background="@drawable/edit_text_tasarim"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/resim"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:background="#AEB6B9"
+            android:layout_marginTop="25dp"
+            app:strokeWidth="3dp"
+            app:strokeColor="@color/white"
+            android:src="@drawable/baseline_person_24"
+            app:shapeAppearanceOverlay="@style/circular"
+            />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/resimekleme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="120dp"
+        android:tint="@color/white"
+        android:backgroundTint="#B0B8BB"
+        android:layout_marginLeft="240dp"
+        android:clickable="true"
+        app:srcCompat="@drawable/baseline_photo_camera_24" />
+
+
+</RelativeLayout>
