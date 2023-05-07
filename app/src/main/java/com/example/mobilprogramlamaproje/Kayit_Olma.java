@@ -186,23 +186,7 @@ public class Kayit_Olma extends AppCompatActivity
                 weight=weightt.getItemAtPosition(0).toString();
             }
         });
-<<<<<<< HEAD
-        signupp.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                username = usernamee.getText().toString();
-                name=namee.getText().toString();
-                surname=surnamee.getText().toString();
-                password=passwordd.getText().toString();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.kayit,new ProfilFrag()).commit();
-            }
-        });
-=======
 
->>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
         floatAction.setOnClickListener(new View.OnClickListener()
         {
             @Override
