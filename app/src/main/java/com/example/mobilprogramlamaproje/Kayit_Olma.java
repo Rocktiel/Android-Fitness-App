@@ -58,7 +58,7 @@ public class Kayit_Olma extends AppCompatActivity
         try{
 
             db=this.openOrCreateDatabase("Denemee",MODE_PRIVATE,null);
-            db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age INTEGER, weight INTEGER, height INTEGER,image BLOB )");
+            db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age VARCHAR, weight VARCHAR, height VARCHAR,image VARCHAR )");
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -186,23 +186,7 @@ public class Kayit_Olma extends AppCompatActivity
                 weight=weightt.getItemAtPosition(0).toString();
             }
         });
-<<<<<<< HEAD
-        signupp.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                username = usernamee.getText().toString();
-                name=namee.getText().toString();
-                surname=surnamee.getText().toString();
-                password=passwordd.getText().toString();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.kayit,new ProfilFrag()).commit();
-            }
-        });
-=======
 
->>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
         floatAction.setOnClickListener(new View.OnClickListener()
         {
             @Override

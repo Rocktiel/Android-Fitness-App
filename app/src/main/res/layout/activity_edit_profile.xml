@@ -303,7 +303,7 @@
         android:layout_marginTop="730dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/tasarim1"
-        android:text="Updte Profile"
+        android:text="Update Profile"
         android:fontFamily="@font/aa"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

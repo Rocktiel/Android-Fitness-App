@@ -35,29 +35,19 @@ public class MainActivity extends AppCompatActivity
 
         Name=findViewById(R.id.name);
         Password=findViewById(R.id.password);
-<<<<<<< HEAD
-        signin=findViewById(R.id.signin);
 
-        signin.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.main,new ProfilFrag()).commit();
-            }
-        });
-=======
+
+
 
         try{
 
             db=this.openOrCreateDatabase("Denemee",MODE_PRIVATE,null);
-            db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age INTEGER, weight INTEGER, height INTEGER,image BLOB )");
+            db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age VARCHAR, weight VARCHAR, height VARCHAR,image VARCHAR )");
         }catch(Exception e){
             e.printStackTrace();
         }
 
->>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
+
 
         signup.setOnClickListener(new View.OnClickListener()
         {
@@ -89,13 +79,12 @@ public class MainActivity extends AppCompatActivity
                         String a = cursor.getString(usernameIndex);
                         String b = cursor.getString(passwordIndex);
 
-                        if(name.equals(a) && password.equals(b) ){
-
+                        if(name.equals(a) && password.equals(b) )
+                        {
                             aa=0;
                             i=new Intent(MainActivity.this,MainActivity2.class);
                             i.putExtra("nickname",a);
                             startActivity(i);
-
                             finish();
                             break;
 
