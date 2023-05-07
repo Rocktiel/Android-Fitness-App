@@ -1,6 +1,7 @@
 package com.example.mobilprogramlamaproje;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -34,6 +35,19 @@ public class MainActivity extends AppCompatActivity
 
         Name=findViewById(R.id.name);
         Password=findViewById(R.id.password);
+<<<<<<< HEAD
+        signin=findViewById(R.id.signin);
+
+        signin.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main,new ProfilFrag()).commit();
+            }
+        });
+=======
 
         try{
 
@@ -43,6 +57,7 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 
+>>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
 
         signup.setOnClickListener(new View.OnClickListener()
         {

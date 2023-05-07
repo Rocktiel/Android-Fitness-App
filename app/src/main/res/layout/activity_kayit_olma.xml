@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Kayit_Olma"
-    android:background="@drawable/arka">
+    android:background="@drawable/arka"
+    android:id="@+id/kayit">
 
     <EditText
         android:id="@+id/username"
@@ -25,7 +26,8 @@
         android:fontFamily="@font/aa"
         android:background="@drawable/edit_text_tasarim"
         android:drawableRight="@drawable/ic_action_name"
-        android:paddingHorizontal="10dp"/>
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"/>
 
     <TextView
         android:textColor="#282828"
@@ -45,7 +47,6 @@
         android:textColor="#282828"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:paddingLeft="5dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -58,18 +59,19 @@
         android:fontFamily="@font/aa"
         android:background="@drawable/edit_text_tasarim"
         android:drawableRight="@drawable/name"
-        android:paddingHorizontal="10dp"/>
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"/>
 
     <EditText
         android:id="@+id/surname"
         android:textColor="#282828"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:paddingLeft="5dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:paddingHorizontal="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="430dp"
         android:hint="Enter Surname"
@@ -87,12 +89,12 @@
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:paddingLeft="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="530dp"
         android:hint="Enter Password"
-        android:paddingHorizontal="10dp"
         android:inputType="textPassword"
         android:textColorHint="#EAEBED"
         android:textSize="20sp"
