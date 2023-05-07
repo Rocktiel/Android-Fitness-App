@@ -1,18 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/arka"
+    android:id="@+id/main">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="440dp"
+        android:ems="10"
+        android:hint="Enter User Name"
+        android:textColorHint="#7E7B7B"
+        android:textColor="#282828"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"
+        />
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="405dp"
+        android:text="User Name"
+        android:textSize="20dp"
+        android:fontFamily="@font/aa"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="540dp"
+        android:ems="10"
+        android:fontFamily="@font/aa"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:maxEms="10"
+        android:textColor="#282828"
+        android:textColorHint="#7E7B7B"
+        android:textSize="20sp" />
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="505dp"
+        android:text="Password"
+        android:textSize="20dp"
+        android:fontFamily="@font/aa"/>
+
+    <Button
+        android:id="@+id/signin"
+        android:textColor="#282828"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/tasarim1"
+        android:gravity="center"
+        android:text="Sign In"
+        android:fontFamily="@font/aa"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="40dp"
+        android:text="DON'T HAVE AN ACCOUNT?"
+        android:textColor="#7E7B7B"
+        android:textSize="15dp"
+        android:fontFamily="@font/aa"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#282828"
+        android:layout_marginRight="65dp"
+        android:layout_marginTop="770dp"
+        android:layout_centerHorizontal="true"
+        android:text="SIGN UP"
+        android:onClick="onClick"
+        android:clickable="true"
+        android:fontFamily="@font/aa"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        app:srcCompat="@drawable/logo_1" />
+
+</RelativeLayout>
