@@ -79,13 +79,12 @@ public class MainActivity extends AppCompatActivity
                         String a = cursor.getString(usernameIndex);
                         String b = cursor.getString(passwordIndex);
 
-                        if(name.equals(a) && password.equals(b) ){
-
+                        if(name.equals(a) && password.equals(b) )
+                        {
                             aa=0;
                             i=new Intent(MainActivity.this,MainActivity2.class);
                             i.putExtra("nickname",a);
                             startActivity(i);
-
                             finish();
                             break;
 
