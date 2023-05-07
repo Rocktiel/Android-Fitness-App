@@ -7,7 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
+<<<<<<< HEAD
             <value value="C:\Users\teofi\.android\avd\Pixel_6_Pro_API_30_1.avd" />
+=======
+            <value value="C:\Users\seyme\.android\avd\Pixel_6_Pro_API_30.avd" />
+>>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
           </Key>
         </deviceKey>
       </Target>
@@ -18,11 +22,15 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\teofi\.android\avd\Pixel_6_Pro_API_30_1.avd" />
+            <value value="C:\Users\seyme\.android\avd\Pixel_6_Pro_API_30.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
+<<<<<<< HEAD
     <timeTargetWasSelectedWithDropDown value="2023-05-07T07:25:02.952446400Z" />
+=======
+    <timeTargetWasSelectedWithDropDown value="2023-05-06T20:46:46.327386500Z" />
+>>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
   </component>
 </project>

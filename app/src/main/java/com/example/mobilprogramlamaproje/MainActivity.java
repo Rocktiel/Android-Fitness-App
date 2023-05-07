@@ -5,14 +5,21 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
+
+    Intent i;
+    SQLiteDatabase db;
+
     Button signin;
     EditText Name,Password;
     TextView signup;
@@ -24,8 +31,11 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         signup =findViewById(R.id.signup);
+        signin=findViewById(R.id.signin);
+
         Name=findViewById(R.id.name);
         Password=findViewById(R.id.password);
+<<<<<<< HEAD
         signin=findViewById(R.id.signin);
 
         signin.setOnClickListener(new View.OnClickListener()
@@ -37,6 +47,17 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction.replace(R.id.main,new ProfilFrag()).commit();
             }
         });
+=======
+
+        try{
+
+            db=this.openOrCreateDatabase("Denemee",MODE_PRIVATE,null);
+            db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age INTEGER, weight INTEGER, height INTEGER,image BLOB )");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+>>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
 
         signup.setOnClickListener(new View.OnClickListener()
         {
@@ -47,5 +68,45 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                name=Name.getText().toString();
+                password=Password.getText().toString();
+                if(name.length()==0 || password.length()==0){
+
+                    Toast.makeText(MainActivity.this, "Boş olamaz.", Toast.LENGTH_SHORT).show();
+                }else{
+                    int aa=1;
+                    Cursor cursor=db.rawQuery("SELECT * FROM denemeusers ",null);
+                    int usernameIndex=cursor.getColumnIndex("username");
+                    int passwordIndex=cursor.getColumnIndex("password");
+
+
+                    while(cursor.moveToNext()) {
+                        String a = cursor.getString(usernameIndex);
+                        String b = cursor.getString(passwordIndex);
+
+                        if(name.equals(a) && password.equals(b) ){
+
+                            aa=0;
+                            i=new Intent(MainActivity.this,MainActivity2.class);
+                            i.putExtra("nickname",a);
+                            startActivity(i);
+
+                            finish();
+                            break;
+
+                        }
+                    }
+                    if(aa==1){
+                        Toast.makeText(MainActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
     }
 }

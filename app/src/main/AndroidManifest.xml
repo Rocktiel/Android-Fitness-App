@@ -8,14 +8,19 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ana_foto"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobilProgramlamaProje"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".Edit_Profile"
             android:exported="false" />
         <activity
             android:name=".Profil"
+=======
+            android:name=".MainActivity2"
+>>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
             android:exported="false" />
         <activity
             android:name=".Kayit_Olma"

@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.service.controls.actions.FloatAction;
@@ -17,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,10 +28,11 @@ import java.util.ArrayList;
 
 public class Kayit_Olma extends AppCompatActivity
 {
+    SQLiteDatabase db;
     Spinner agee,heightt,weightt;
     ArrayAdapter<Integer> adapter,adapter1,adapter2;
     ArrayList<Integer> agelist,weightlist,heightlist;
-    String age,height,weight,username,name,surname,password;
+    String age,height,weight,username2,name2,surname2,password2,age2,height2,weight2,username3,name3,surname3,password3;
     EditText usernamee,namee,surnamee,passwordd;
     Button signupp;
     ImageView  imageView;
@@ -50,6 +54,73 @@ public class Kayit_Olma extends AppCompatActivity
         agee=findViewById(R.id.age);
         heightt=findViewById(R.id.height);
         weightt=findViewById(R.id.weight);
+
+        try{
+
+            db=this.openOrCreateDatabase("Denemee",MODE_PRIVATE,null);
+            db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age INTEGER, weight INTEGER, height INTEGER,image BLOB )");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        signupp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int countt=1;
+
+
+                username3=usernamee.getText().toString();
+                name3=namee.getText().toString();
+                surname3=surnamee.getText().toString();
+                password3=passwordd.getText().toString();
+                String imageInByte=uri.toString();
+
+                Cursor cursor=db.rawQuery("SELECT * FROM denemeusers ",null);
+                int usernameIndex=cursor.getColumnIndex("username");
+                int nameIndex=cursor.getColumnIndex("name");
+                int surnameIndex=cursor.getColumnIndex("surname");
+                int passwordIndex=cursor.getColumnIndex("password");
+                int ageIndex=cursor.getColumnIndex("age");
+                int weightIndex=cursor.getColumnIndex("weight");
+                int heightIndex=cursor.getColumnIndex("height");
+
+                while(cursor.moveToNext()) {
+                    username2 = cursor.getString(usernameIndex);
+                    name2 = cursor.getString(nameIndex);
+                    surname2 = cursor.getString(surnameIndex);
+                    password2 = cursor.getString(passwordIndex);
+                    age2 = cursor.getString(ageIndex);
+                    weight2 = cursor.getString(weightIndex);
+                    height2 = cursor.getString(heightIndex);
+
+                    if(username3.equals(username2)){
+                        Toast.makeText(Kayit_Olma.this, "Bu kullanıcı adı alınmış.", Toast.LENGTH_SHORT).show();
+                        countt=0;
+
+                    }
+
+
+
+                }
+
+                if(username3.length()==0 || name3.length()==0 || surname3.length()==0 || password3.length()==0 ||imageInByte.length()==0){
+                    Toast.makeText(Kayit_Olma.this, "Boş olamaz.", Toast.LENGTH_SHORT).show();
+
+                } else if(countt==1){
+                    db.execSQL("INSERT INTO denemeusers(username,name,surname,password,age,weight,height,image) VALUES('"+username3+"','"+name3+"','"+surname3+"','"+password3+"','"+age+"','"+weight+"','"+height+"','"+imageInByte+"')");
+                    Toast.makeText(Kayit_Olma.this, "Kayıt başarılı.", Toast.LENGTH_SHORT).show();
+                    Intent ii=new Intent(Kayit_Olma.this,MainActivity.class);
+                    startActivity(ii);
+
+
+                }
+
+
+            }
+        });
+
+
+
         agelist=new ArrayList<>();
         weightlist=new ArrayList<>();
         heightlist=new ArrayList<>();
@@ -115,6 +186,7 @@ public class Kayit_Olma extends AppCompatActivity
                 weight=weightt.getItemAtPosition(0).toString();
             }
         });
+<<<<<<< HEAD
         signupp.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -128,6 +200,9 @@ public class Kayit_Olma extends AppCompatActivity
                 fragmentTransaction.replace(R.id.kayit,new ProfilFrag()).commit();
             }
         });
+=======
+
+>>>>>>> 67e0d4a38cc307acf7ec95b8971314c55d2f211b
         floatAction.setOnClickListener(new View.OnClickListener()
         {
             @Override
