@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity
         try{
 
             db=this.openOrCreateDatabase("Denemee",MODE_PRIVATE,null);
-            db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age INTEGER, weight INTEGER, height INTEGER,image BLOB )");
+            db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age VARCHAR, weight VARCHAR, height VARCHAR,image VARCHAR )");
         }catch(Exception e){
             e.printStackTrace();
         }
