@@ -9,7 +9,10 @@
     <LinearLayout
         android:id="@+id/fragmentler"
         android:layout_width="match_parent"
-        android:layout_height="741dp"
+        android:layout_height="743dp"
+
+        android:layout_above="@+id/bottomnavi"
+
         android:orientation="horizontal" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
