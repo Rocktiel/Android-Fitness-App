@@ -6,7 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <LinearLayout
+        android:id="@+id/fragmentler"
+        android:layout_width="match_parent"
+        android:layout_height="741dp"
+        android:orientation="horizontal" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavi"
         android:layout_width="match_parent"
         app:itemTextColor="#282828"
         app:itemIconSize="40dp"
