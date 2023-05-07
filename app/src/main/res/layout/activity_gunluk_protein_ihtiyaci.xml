@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gunluk_protein_ihtiyaci"
+    android:background="@drawable/arka4">
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="300dp"
+        android:text="Lean Body Weight :"
+        android:textSize="20dp"
+        android:fontFamily="@font/aa"/>
+
+    <EditText
+        android:id="@+id/yagsizvucut"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="290dp"
+        android:inputType="number"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:textSize="20sp"
+        android:paddingLeft="10dp"/>
+
+    <Button
+        android:id="@+id/gunlukprotein"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="555dp"
+        android:background="@drawable/tasarim1"
+        android:paddingHorizontal="15dp"
+        android:text="Calculate" />
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="420dp"
+        android:text="Result :"
+        android:textSize="20dp"
+        android:fontFamily="@font/aa"/>
+
+    <TextView
+        android:id="@+id/resultt"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="283dp"
+        android:layout_marginTop="410dp"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:text="Daily Protein Needs"
+        android:layout_centerHorizontal="true"
+        android:textColor="#282828"/>
+
+</RelativeLayout>
