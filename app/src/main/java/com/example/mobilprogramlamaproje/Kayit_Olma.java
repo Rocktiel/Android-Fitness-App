@@ -3,6 +3,7 @@ package com.example.mobilprogramlamaproje;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -123,6 +124,8 @@ public class Kayit_Olma extends AppCompatActivity
                 name=namee.getText().toString();
                 surname=surnamee.getText().toString();
                 password=passwordd.getText().toString();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.kayit,new ProfilFrag()).commit();
             }
         });
         floatAction.setOnClickListener(new View.OnClickListener()
