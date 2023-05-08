@@ -9,13 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class Gunluk_protein_ihtiyaci extends AppCompatActivity
 {
     Button result;
     EditText yag;
     TextView resulttt;
-    String sonuc,aradeger;
-    int deger;
+    String sonuc,aradeger,ondalik;
+    Double deger,f,x;
+    DecimalFormat df;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,6 +28,7 @@ public class Gunluk_protein_ihtiyaci extends AppCompatActivity
         result=findViewById(R.id.gunlukprotein);
         yag=findViewById(R.id.yagsizvucut);
         resulttt=findViewById(R.id.resultt);
+        df= new DecimalFormat("#.##");
 
         result.setOnClickListener(new View.OnClickListener()
         {
@@ -32,9 +36,11 @@ public class Gunluk_protein_ihtiyaci extends AppCompatActivity
             public void onClick(View view)
             {
                 aradeger=yag.getText().toString();
-                deger = Integer.parseInt(aradeger);
-                sonuc=String.valueOf(deger * 2.75);
-                resulttt.setText(sonuc);
+                deger = Double.valueOf(aradeger);
+                f= deger * 2.75;
+                ondalik=df.format(f);
+                x=Double.valueOf(ondalik);
+                resulttt.setText(x.toString());
             }
         });
     }

@@ -2,11 +2,18 @@ package com.example.mobilprogramlamaproje;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +62,83 @@ public class Exercises extends Fragment {
         }
     }
 
+    View view;
+    RecyclerView rv;
+
+    List<egzersiz> egzersizList;
+    SearchView sv;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_exercises, container, false);
+
+        view=inflater.inflate(R.layout.fragment_exercises, container, false);
+        rv=view.findViewById(R.id.myrecycler);
+
+        egzersizList=new ArrayList<egzersiz>();
+
+        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
+
+        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
+
+        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
+
+        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
+
+
+
+
+        rv.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        rv.setAdapter(new MyAdapter(view.getContext(),egzersizList));
+
+
+        sv=view.findViewById(R.id.searchviewexercise);
+        sv.clearFocus();
+
+
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+
+
+        });
+
+
+
+
+        return view;
+    }
+
+    private void filterList(String text) {
+        List<egzersiz> filteredList=new ArrayList<>();
+        for(egzersiz person1 : egzersizList){
+            if(person1.getAd().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(person1);
+            }
+        }
+
+
+        rv.setAdapter(new MyAdapter(view.getContext(),filteredList));
+
+
     }
 }

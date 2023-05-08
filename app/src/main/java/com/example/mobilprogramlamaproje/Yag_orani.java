@@ -10,14 +10,17 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class Yag_orani extends AppCompatActivity
 {
     CheckBox maleee,femaleee;
     EditText bel,boyun,boyy;
     TextView sonucccx;
     Button hesapla;
-    String bell,boyunnn,boyyy;
-    Double araislem,a,d,c,e,f;
+    String bell,boyunnn,boyyy,ondalik;
+    Double araislem,a,d,c,e,f,x;
+    DecimalFormat df;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,6 +34,7 @@ public class Yag_orani extends AppCompatActivity
         boyun=findViewById(R.id.neck);
         boyy=findViewById(R.id.boy);
         sonucccx=findViewById(R.id.sonuc);
+        df= new DecimalFormat("#.##");
 
         hesapla.setOnClickListener(new View.OnClickListener()
         {
@@ -51,7 +55,17 @@ public class Yag_orani extends AppCompatActivity
                 {
                     araislem = 1.0324 - 0.19077 * a * (d - c) + 0.15456 * a * e;
                     f= 495 / araislem;
-                    sonucccx.setText(f.toString());
+                    ondalik=df.format(f);
+                    x=Double.valueOf(ondalik);
+                    sonucccx.setText(x.toString());
+                }
+                else
+                {
+                    araislem = 1.0324 - 0.19077 * a * (d - c) + 0.15456 * a * e;
+                    f= 495 / araislem;
+                    ondalik=df.format(f);
+                    x=Double.valueOf(ondalik);
+                    sonucccx.setText(x.toString());
                 }
             }
         });

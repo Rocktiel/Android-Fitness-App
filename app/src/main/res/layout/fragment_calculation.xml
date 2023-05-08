@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="743dp"
+    android:layout_height="750dp"
     tools:context=".Calculation"
     android:background="@drawable/arka2">
 
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="150dp"
-        android:background="@drawable/tasarim1"
+        android:background="@color/white"
         android:paddingHorizontal="15dp"
         android:text="Basal Metabolic Rate" />
 
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="260dp"
-        android:background="@drawable/tasarim1"
+        android:background="@color/white"
         android:paddingHorizontal="15dp"
         android:text="Daily Protein Need" />
 
@@ -32,9 +32,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="370dp"
-        android:background="@drawable/tasarim1"
+        android:layout_marginTop="590dp"
+        android:background="@color/white"
         android:paddingHorizontal="15dp"
         android:text="Fat Rate" />
+
+    <Button
+        android:id="@+id/Gunluk_Kalori_ihtiyaci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="370dp"
+        android:background="@color/white"
+        android:paddingHorizontal="15dp"
+        android:text="Daily Calorie Needs" />
+
+    <Button
+        android:id="@+id/vucut_kitle_indeksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="480dp"
+        android:background="@color/white"
+        android:paddingHorizontal="15dp"
+        android:text="Body Mass Index" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/baslik_tasarim">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:text="CALCULATION"
+            android:textColor="#282828" />
+    </RelativeLayout>
 
 </FrameLayout>

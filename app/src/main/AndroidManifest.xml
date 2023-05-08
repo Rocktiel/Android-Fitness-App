@@ -14,6 +14,12 @@
         tools:ignore="ExtraText"
         tools:targetApi="31">
         <activity
+            android:name=".Vucut_kitle_indeksi"
+            android:exported="false" />
+        <activity
+            android:name=".Gunluk_kalori_ihtiyaci"
+            android:exported="false" />
+        <activity
             android:name=".Yag_orani"
             android:exported="false" />
         <activity
