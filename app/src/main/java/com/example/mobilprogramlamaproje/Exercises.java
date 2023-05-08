@@ -81,6 +81,23 @@ public class Exercises extends Fragment {
         egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
         egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
 
+        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
+
+        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
+
+        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
+
+
+
 
         rv.setLayoutManager(new LinearLayoutManager(view.getContext()));
         rv.setAdapter(new MyAdapter(view.getContext(),egzersizList));

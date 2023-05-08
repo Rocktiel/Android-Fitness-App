@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="150dp"
-        android:background="@drawable/tasarim1"
+        android:background="@color/white"
         android:paddingHorizontal="15dp"
         android:text="Basal Metabolic Rate" />
 
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="260dp"
-        android:background="@drawable/tasarim1"
+        android:background="@color/white"
         android:paddingHorizontal="15dp"
         android:text="Daily Protein Need" />
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="590dp"
-        android:background="@drawable/tasarim1"
+        android:background="@color/white"
         android:paddingHorizontal="15dp"
         android:text="Fat Rate" />
 
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="370dp"
-        android:background="@drawable/tasarim1"
+        android:background="@color/white"
         android:paddingHorizontal="15dp"
         android:text="Daily Calorie Needs" />
 
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="480dp"
-        android:background="@drawable/tasarim1"
+        android:background="@color/white"
         android:paddingHorizontal="15dp"
         android:text="Body Mass Index" />
 
@@ -72,4 +72,5 @@
             android:text="CALCULATION"
             android:textColor="#282828" />
     </RelativeLayout>
+
 </FrameLayout>
