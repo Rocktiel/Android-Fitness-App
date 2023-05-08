@@ -11,19 +11,31 @@
         android:roundIcon="@mipmap/ana_foto"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobilProgramlamaProje"
-        tools:targetApi="31"
-        tools:ignore="ExtraText">
+        tools:ignore="ExtraText"
+        tools:targetApi="31">
         <activity
-
+            android:name=".Vucut_kitle_indeksi"
+            android:exported="false" />
+        <activity
+            android:name=".Gunluk_kalori_ihtiyaci"
+            android:exported="false" />
+        <activity
+            android:name=".Yag_orani"
+            android:exported="false" />
+        <activity
+            android:name=".Gunluk_protein_ihtiyaci"
+            android:exported="false" />
+        <activity
+            android:name=".Bazal_metabolizma_hizi"
+            android:exported="false" />
+        <activity
             android:name=".Edit_Profile"
             android:exported="false" />
         <activity
             android:name=".ProfilFrag"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity2"
-
             android:exported="false" />
         <activity
             android:name=".Kayit_Olma"

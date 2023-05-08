@@ -1,5 +1,6 @@
 package com.example.mobilprogramlamaproje;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,14 +8,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Calculation#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Calculation extends Fragment {
-
+public class Calculation extends Fragment
+{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -54,11 +56,68 @@ public class Calculation extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    Button bazalhız,protein,yag,kalori,vucut;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calculation, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View view = inflater.inflate(R.layout.fragment_calculation, container, false);
+
+        bazalhız=view.findViewById(R.id.BazalMetabolizmaHızı);
+        protein=view.findViewById(R.id.Gunluk_protein_ihtiyaci);
+        yag=view.findViewById(R.id.yag_orani);
+        kalori=view.findViewById(R.id.Gunluk_Kalori_ihtiyaci);
+        vucut=view.findViewById(R.id.vucut_kitle_indeksi);
+        bazalhız.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent11 = new Intent(getActivity().getApplication(),Bazal_metabolizma_hizi.class);
+                startActivity(intent11);
+            }
+        });
+
+        protein.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent12 = new Intent(getActivity().getApplication(),Gunluk_protein_ihtiyaci.class);
+                startActivity(intent12);
+            }
+        });
+
+        yag.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent13 = new Intent(getActivity().getApplication(),Yag_orani.class);
+                startActivity(intent13);
+            }
+        });
+
+        kalori.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent14 = new Intent(getActivity().getApplication(),Gunluk_kalori_ihtiyaci.class);
+                startActivity(intent14);
+            }
+        });
+
+        vucut.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent15 = new Intent(getActivity().getApplication(),Vucut_kitle_indeksi.class);
+                startActivity(intent15);
+            }
+        });
+
+
+        return view;
     }
 }

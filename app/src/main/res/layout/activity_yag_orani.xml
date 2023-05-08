@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Yag_orani"
+    android:background="@drawable/arka4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/aa"
+        android:text="Gender :"
+        android:textColor="#282828"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/malee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/aa"
+        android:text="Male"
+        android:textColor="#5F6263"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/femalee"
+        android:textColor="#5F6263"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="150dp"
+        android:text="Female"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="250dp"
+        android:text="Waist :"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"/>
+
+    <EditText
+        android:id="@+id/waist"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="240dp"
+        android:inputType="number"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:paddingHorizontal="10dp"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="355dp"
+        android:text="Neck :"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"/>
+
+    <EditText
+        android:id="@+id/neck"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="345dp"
+        android:inputType="number"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:paddingHorizontal="10dp"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="460dp"
+        android:text="Height :"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"/>
+
+    <EditText
+        android:id="@+id/boy"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="450dp"
+        android:inputType="number"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:paddingHorizontal="10dp"/>
+
+    <Button
+        android:id="@+id/yagorani"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="555dp"
+        android:background="@drawable/tasarim1"
+        android:paddingHorizontal="15dp"
+        android:text="Calculate" />
+
+    <TextView
+        android:id="@+id/sonuc"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="640dp"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="650dp"
+        android:fontFamily="@font/aa"
+        android:text="Result :"
+        android:textColor="#282828"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/baslik_tasarim">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:text="FAT RATE"
+            android:textColor="#282828" />
+    </RelativeLayout>
+</RelativeLayout>
