@@ -56,7 +56,7 @@ public class Calculation extends Fragment
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    Button bazalhız,protein,yag;
+    Button bazalhız,protein,yag,kalori,vucut;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -65,6 +65,8 @@ public class Calculation extends Fragment
         bazalhız=view.findViewById(R.id.BazalMetabolizmaHızı);
         protein=view.findViewById(R.id.Gunluk_protein_ihtiyaci);
         yag=view.findViewById(R.id.yag_orani);
+        kalori=view.findViewById(R.id.Gunluk_Kalori_ihtiyaci);
+        vucut=view.findViewById(R.id.vucut_kitle_indeksi);
         bazalhız.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -94,6 +96,27 @@ public class Calculation extends Fragment
                 startActivity(intent13);
             }
         });
+
+        kalori.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent14 = new Intent(getActivity().getApplication(),Gunluk_kalori_ihtiyaci.class);
+                startActivity(intent14);
+            }
+        });
+
+        vucut.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent15 = new Intent(getActivity().getApplication(),Vucut_kitle_indeksi.class);
+                startActivity(intent15);
+            }
+        });
+
 
         return view;
     }
