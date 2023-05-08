@@ -48,7 +48,7 @@ public class Vucut_kitle_indeksi extends AppCompatActivity
 
                 araislem= c / (metre * metre);
                 ondalik=df.format(araislem);
-                x=Double.valueOf(ondalik);
+                x=Double.valueOf(araislem);
 
                 if (x < 18.49)
                 {
