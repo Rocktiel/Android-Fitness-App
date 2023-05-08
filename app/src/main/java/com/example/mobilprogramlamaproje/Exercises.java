@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -113,7 +114,7 @@ public class Exercises extends Fragment {
     private void filterList(String text) {
         List<egzersiz> filteredList=new ArrayList<>();
         for(egzersiz person1 : egzersizList){
-            if(person1.getAd().contains(text)){
+            if(person1.getAd().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(person1);
             }
         }
