@@ -120,6 +120,8 @@ public class Edit_Profile extends AppCompatActivity
                     Toast.makeText(Edit_Profile.this, "Güncellendi.", Toast.LENGTH_SHORT).show();
                     db.execSQL("UPDATE denemeusers SET username='"+username+"', name='"+name+"', surname='"+surname+"', age='"+age+"', weight='"+weight+"', height='"+height+"' WHERE username=('"+un+"')");
                     Intent intent61 = new Intent(getApplicationContext(),MainActivity2.class);
+                    intent61=new Intent(getApplicationContext(),MainActivity2.class);
+                    intent61.putExtra("nickname",username);
                     startActivity(intent61);
                 }
 
