@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gunluk_kalori_ihtiyaci"
+    android:background="@drawable/arka4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/aa"
+        android:text="Gender :"
+        android:textColor="#282828"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/erkekk"
+        android:textColor="#5F6263"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="120dp"
+        android:text="Male"
+        android:textSize="15sp"
+        android:fontFamily="@font/aa"/>
+
+    <CheckBox
+        android:id="@+id/kadinn"
+        android:textColor="#5F6263"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="150dp"
+        android:text="Female"
+        android:textSize="15sp"
+        android:fontFamily="@font/aa"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="220dp"
+        android:text="Age :"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"/>
+
+    <EditText
+        android:id="@+id/yasxx"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="210dp"
+        android:inputType="number"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"/>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="300dp"
+        android:text="Height :"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"/>
+
+    <EditText
+        android:id="@+id/boyxx"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="290dp"
+        android:inputType="number"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="380dp"
+        android:fontFamily="@font/aa"
+        android:text="Weight :"
+        android:textColor="#282828"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/kiloxx"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="370dp"
+        android:inputType="number"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"/>
+
+    <Button
+        android:id="@+id/kilo_almak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="610dp"
+        android:background="@drawable/tasarim1"
+        android:paddingHorizontal="15dp"
+        android:text="Gaining Weight" />
+
+    <Button
+        android:id="@+id/kilo_vermekkkkkkk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="610dp"
+        android:background="@drawable/tasarim1"
+        android:paddingHorizontal="15dp"
+        android:text="Lose Weight" />
+
+
+    <TextView
+        android:id="@+id/sonucxh"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="680dp"
+        android:background="@drawable/tasarim2"
+        android:textColor="#282828"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="690dp"
+        android:fontFamily="@font/aa"
+        android:text="Result :"
+        android:textColor="#282828"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/baslik_tasarim">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:text="DAİLY CALORIE NEEDS"
+            android:textColor="#282828" />
+    </RelativeLayout>
+
+    <TextView
+        android:textColor="#282828"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="460dp"
+        android:text="Activity Level :"
+        android:textSize="20sp"
+        android:fontFamily="@font/aa"/>
+
+    <CheckBox
+        android:id="@+id/yerlesik"
+        android:textColor="#5F6263"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="460dp"
+        android:text="Settled"
+        android:textSize="15sp"
+        android:fontFamily="@font/aa"/>
+
+    <CheckBox
+        android:id="@+id/hafif_aktif"
+        android:textColor="#5F6263"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="485dp"
+        android:text="Lightly Active"
+        android:textSize="15sp"
+        android:fontFamily="@font/aa"/>
+
+    <CheckBox
+        android:id="@+id/orta_derece_aktif"
+        android:textColor="#5F6263"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="510dp"
+        android:text="Moderately Active "
+        android:textSize="15sp"
+        android:fontFamily="@font/aa"/>
+
+    <CheckBox
+        android:id="@+id/cok_aktif"
+        android:textColor="#5F6263"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="535dp"
+        android:text="Very  Active "
+        android:textSize="15sp"
+        android:fontFamily="@font/aa"/>
+
+    <CheckBox
+        android:id="@+id/son_derece_aktif"
+        android:textColor="#5F6263"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="560dp"
+        android:text="Extremely Active "
+        android:textSize="15sp"
+        android:fontFamily="@font/aa"/>
+</RelativeLayout>
