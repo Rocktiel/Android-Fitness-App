@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,16 +13,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.bolgeler.FragmentBacaklar;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentBaldir;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentBiceps;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentGeri;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentGogus;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentKarinKas;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentOmuzlar;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentOnKollar;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentTriceps;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Exercises#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Exercises extends Fragment {
+public class Exercises extends Fragment implements RecylerViewClick {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,32 +87,18 @@ public class Exercises extends Fragment {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
-
-        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
-
-        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
-
-        egzersizList.add(new egzersiz("Bacaklar",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Göğüs",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Karın",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Omuz",R.drawable.bacakkas));
-
-
-
+        egzersizList.add(new egzersiz("Sixpack",R.drawable.sixpackv3));
+        egzersizList.add(new egzersiz("Back",R.drawable.back));
+        egzersizList.add(new egzersiz("Biceps",R.drawable.biceps));
+        egzersizList.add(new egzersiz("Calf",R.drawable.craf));
+        egzersizList.add(new egzersiz("Chest",R.drawable.chest));
+        egzersizList.add(new egzersiz("Forearm",R.drawable.forearm));
+        egzersizList.add(new egzersiz("Legs",R.drawable.legs));
+        egzersizList.add(new egzersiz("Shoulder",R.drawable.shoulder));
+        egzersizList.add(new egzersiz("Triceps",R.drawable.triceps));
 
         rv.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        rv.setAdapter(new MyAdapter(view.getContext(),egzersizList));
-
+        rv.setAdapter(new MyAdapter(view.getContext(),egzersizList, (RecylerViewClick) this));
 
         sv=view.findViewById(R.id.searchviewexercise);
         sv.clearFocus();
@@ -112,19 +109,12 @@ public class Exercises extends Fragment {
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
-
             @Override
             public boolean onQueryTextChange(String newText) {
                 filterList(newText);
                 return true;
             }
-
-
         });
-
-
-
-
         return view;
     }
 
@@ -135,10 +125,75 @@ public class Exercises extends Fragment {
                 filteredList.add(person1);
             }
         }
+        rv.setAdapter(new MyAdapter(view.getContext(),filteredList, (RecylerViewClick) this));
+    }
+    public void onItemClick(int position) {
 
 
-        rv.setAdapter(new MyAdapter(view.getContext(),filteredList));
+        if(position==0){
+            FragmentKarinKas karinkas=new FragmentKarinKas();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,karinkas).commit();
 
+        }
+        else if(position==2){
+            FragmentBiceps biceps=new FragmentBiceps();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,biceps).commit();
+
+        }
+        else if(position==3){
+            FragmentBaldir baldir=new FragmentBaldir();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,baldir).commit();
+
+        }
+        else if(position==4){
+            FragmentGogus gogus=new FragmentGogus();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,gogus).commit();
+
+        }
+        else if(position==5){
+            FragmentOnKollar onkollar=new FragmentOnKollar();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,onkollar).commit();
+
+        }
+        else if(position==6){
+            FragmentBacaklar bacak=new FragmentBacaklar();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,bacak).commit();
+
+        }
+        else if(position==7){
+            FragmentOmuzlar omuz=new FragmentOmuzlar();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,omuz).commit();
+
+        }
+        else if(position==8){
+            FragmentTriceps triceps=new FragmentTriceps();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,triceps).commit();
+
+        }
+        else if(position==1){
+            FragmentGeri geri=new FragmentGeri();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,geri).commit();
+
+        }
 
     }
+
 }
