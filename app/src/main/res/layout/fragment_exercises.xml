@@ -19,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:textSize="20sp"
-            android:text="CALCULATION"
+            android:text="EXERCISES"
             android:textColor="#282828" />
     </RelativeLayout>
 

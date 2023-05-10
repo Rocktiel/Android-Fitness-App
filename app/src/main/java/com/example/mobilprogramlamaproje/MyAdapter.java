@@ -12,10 +12,12 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     Context context;
     List<egzersiz> egzersizler;
+    private final RecylerViewClick click;
 
-    public MyAdapter(Context context, List<egzersiz> egzersizler) {
+    public MyAdapter(Context context, List<egzersiz> egzersizler,RecylerViewClick click) {
         this.context = context;
         this.egzersizler = egzersizler;
+        this.click=click;
     }
 
     public void setFilteredList(List<egzersiz> filteredList){
@@ -26,7 +28,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.egzersiz,parent,false));
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.egzersiz,parent,false),click);
     }
 
     @Override

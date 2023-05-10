@@ -12,10 +12,24 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     TextView text;
     ImageView img;
 
-    public MyViewHolder(@NonNull View itemView) {
+    public MyViewHolder(@NonNull View itemView,RecylerViewClick click) {
         super(itemView);
 
         text=itemView.findViewById(R.id.textView);
         img=itemView.findViewById(R.id.image22);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(click!=null){
+                    int pos=getAdapterPosition();
+                    if(pos!=RecyclerView.NO_POSITION){
+                        click.onItemClick(pos);
+                    }
+
+                }
+
+            }
+        });
     }
 }
