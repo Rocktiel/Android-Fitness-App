@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity
 
         Name=findViewById(R.id.name);
         Password=findViewById(R.id.password);
+        String gfhgfhj=signup.getText().toString();
 
 
 

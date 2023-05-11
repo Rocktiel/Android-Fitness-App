@@ -3,6 +3,8 @@ package com.example.mobilprogramlamaproje.bolgeler;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,60 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.forearm.FragmentForearmBarbellWristCurl;
+import com.example.mobilprogramlamaproje.forearm.FragmentForearmReverseWristCurl;
+import com.example.mobilprogramlamaproje.forearm.FragmentForearmSeatedDumbellWristCurl;
+import com.example.mobilprogramlamaproje.forearm.FragmentForearmWristRotation;
 import com.example.mobilprogramlamaproje.MyAdapter;
 import com.example.mobilprogramlamaproje.R;
-import com.example.mobilprogramlamaproje.RecylerViewClick;
 import com.example.mobilprogramlamaproje.egzersiz;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentOnKollar#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FragmentOnKollar extends Fragment implements RecylerViewClick {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FragmentOnKollar() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentOnKollar.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentOnKollar newInstance(String param1, String param2) {
-        FragmentOnKollar fragment = new FragmentOnKollar();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+public class FragmentOnKollar extends Fragment implements MyAdapter.SelectedUser {
 
     View view;
     List<egzersiz> egzersizList;
@@ -77,22 +37,47 @@ public class FragmentOnKollar extends Fragment implements RecylerViewClick {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Flutter Kicks",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Side Bridges",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Superman",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Hanging Leg Raise",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Barbell Wrist Curl",R.drawable.barbellwristcurl));
+        egzersizList.add(new egzersiz("Reverse Wrist Curl",R.drawable.reversewristcurl));
+        egzersizList.add(new egzersiz("Seated Dumbell Wrist Curl",R.drawable.seateddumbellwristcurl));
+        egzersizList.add(new egzersiz("Wrist Rotation",R.drawable.wristrotation));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList, (RecylerViewClick) this));
-
-
-
+        myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
 
         return view;
     }
 
     @Override
-    public void onItemClick(int position) {
+    public void selecteduser(egzersiz egz) {
 
+        if(egz.getAd().equals("Barbell Wrist Curl"))
+        {
+            FragmentForearmBarbellWristCurl barbellWristCurl=new FragmentForearmBarbellWristCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,barbellWristCurl).commit();
+        }
+        else if(egz.getAd().equals("Reverse Wrist Curl"))
+        {
+            FragmentForearmReverseWristCurl reverseWristCurl=new FragmentForearmReverseWristCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,reverseWristCurl).commit();
+        }
+        else if(egz.getAd().equals("Seated Dumbell Wrist Curl"))
+        {
+            FragmentForearmSeatedDumbellWristCurl seatedDumbellWristCurl=new FragmentForearmSeatedDumbellWristCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,seatedDumbellWristCurl).commit();
+        }
+        else if(egz.getAd().equals("Wrist Rotation"))
+        {
+            FragmentForearmWristRotation wristRotation=new FragmentForearmWristRotation();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,wristRotation).commit();
+        }
     }
 }

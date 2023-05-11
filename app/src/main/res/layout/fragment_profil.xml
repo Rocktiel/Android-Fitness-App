@@ -16,7 +16,7 @@
         android:background="#AEB6B9"
         android:src="@drawable/baseline_person_24"
         app:shapeAppearanceOverlay="@style/circular"
-        app:strokeColor="@color/white"
+        app:strokeColor="@color/black"
         app:strokeWidth="3dp"
         android:scaleType="fitXY"/>
 
