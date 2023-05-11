@@ -3,6 +3,8 @@ package com.example.mobilprogramlamaproje.bolgeler;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,60 +12,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsCableChestCompression;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsCableCurl;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsConcentrationCurl;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsDumbbellPreacherCurl;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsHammerCurl;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsInclineReverseDumbbellPress;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsReverseBarbellCurl;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsScotCurlZBar;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsSeatedDumbbellCurl;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsSeatedHammerCurl;
+import com.example.mobilprogramlamaproje.biceps.FragmentBicepsSingleArmCableCurl;
 import com.example.mobilprogramlamaproje.MyAdapter;
 import com.example.mobilprogramlamaproje.R;
-import com.example.mobilprogramlamaproje.RecylerViewClick;
 import com.example.mobilprogramlamaproje.egzersiz;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentBiceps#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FragmentBiceps extends Fragment implements RecylerViewClick {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FragmentBiceps() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentBiceps.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentBiceps newInstance(String param1, String param2) {
-        FragmentBiceps fragment = new FragmentBiceps();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+public class FragmentBiceps extends Fragment implements MyAdapter.SelectedUser {
 
     View view;
     List<egzersiz> egzersizList;
@@ -77,22 +44,113 @@ public class FragmentBiceps extends Fragment implements RecylerViewClick {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Flutter Kicks",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Side Bridges",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Superman",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Hanging Leg Raise",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Cable Chest Compression",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Cable Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Concentration Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Dumbbell Preacher Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Hammer Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Incline Reverse Dumbbell Press",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Reverse Barbell Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Scot Curl Z-Bar",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Seated Dumbbell Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Seated Hammer Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Single Arm Cable Curl",R.drawable.bacakkas));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList, (RecylerViewClick) this));
-
-
-
+        myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
 
         return view;
     }
 
     @Override
-    public void onItemClick(int position) {
+    public void selecteduser(egzersiz egz) {
 
+        if(egz.getAd().equals("Cable Chest Compression"))
+        {
+            FragmentBicepsCableChestCompression cableChestCompression=new FragmentBicepsCableChestCompression();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,cableChestCompression).commit();
+        }
+        else if(egz.getAd().equals("Cable Curl"))
+        {
+            FragmentBicepsCableCurl cableCurl=new FragmentBicepsCableCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,cableCurl).commit();
+
+        }
+        else if(egz.getAd().equals("Concentration Curl"))
+        {
+            FragmentBicepsConcentrationCurl concentrationCurl=new FragmentBicepsConcentrationCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,concentrationCurl).commit();
+
+        }
+        else if(egz.getAd().equals("Dumbbell Preacher Curl"))
+        {
+            FragmentBicepsDumbbellPreacherCurl dumbbellPreacherCurl=new FragmentBicepsDumbbellPreacherCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,dumbbellPreacherCurl).commit();
+
+        }
+        else if(egz.getAd().equals("Hammer Curl"))
+        {
+            FragmentBicepsHammerCurl hammerCurl=new FragmentBicepsHammerCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,hammerCurl).commit();
+
+        }
+        else if(egz.getAd().equals("Incline Reverse Dumbbell Press"))
+        {
+            FragmentBicepsInclineReverseDumbbellPress inclineReverseDumbbellPress=new FragmentBicepsInclineReverseDumbbellPress();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,inclineReverseDumbbellPress).commit();
+
+        }
+        else if(egz.getAd().equals("Reverse Barbell Curl"))
+        {
+            FragmentBicepsReverseBarbellCurl reverseBarbellCurl=new FragmentBicepsReverseBarbellCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,reverseBarbellCurl).commit();
+
+        }
+        else if(egz.getAd().equals("Scot Curl Z-Bar"))
+        {
+            FragmentBicepsScotCurlZBar scotCurlZBar=new FragmentBicepsScotCurlZBar();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,scotCurlZBar).commit();
+
+        }
+        else if(egz.getAd().equals("Seated Dumbbell Curl"))
+        {
+            FragmentBicepsSeatedDumbbellCurl seatedDumbbellCurl=new FragmentBicepsSeatedDumbbellCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,seatedDumbbellCurl).commit();
+
+        }
+        else if(egz.getAd().equals("Seated Hammer Curl"))
+        {
+            FragmentBicepsSeatedHammerCurl seatedHammerCurl=new FragmentBicepsSeatedHammerCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,seatedHammerCurl).commit();
+
+        }
+        else if(egz.getAd().equals("Single Arm Cable Curl"))
+        {
+            FragmentBicepsSingleArmCableCurl singleArmCableCurl=new FragmentBicepsSingleArmCableCurl();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,singleArmCableCurl).commit();
+
+        }
     }
 }

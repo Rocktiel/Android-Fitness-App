@@ -3,6 +3,8 @@ package com.example.mobilprogramlamaproje.bolgeler;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,60 +12,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.chest.FragmentChestBenchPress;
+import com.example.mobilprogramlamaproje.chest.FragmentChestCableCrossover;
+import com.example.mobilprogramlamaproje.chest.FragmentChestDeclinePress;
+import com.example.mobilprogramlamaproje.chest.FragmentChestDips;
+import com.example.mobilprogramlamaproje.chest.FragmentChestDumbellPullover;
+import com.example.mobilprogramlamaproje.chest.FragmentChestInclineDumbellFly;
+import com.example.mobilprogramlamaproje.chest.FragmentChestInclinedPushups;
+import com.example.mobilprogramlamaproje.chest.FragmentChestModifiedPushups;
+import com.example.mobilprogramlamaproje.chest.FragmentChestPecDeckFly;
+import com.example.mobilprogramlamaproje.chest.FragmentChestPushUp;
+import com.example.mobilprogramlamaproje.chest.FragmentChestSmithMachineBenchPress;
 import com.example.mobilprogramlamaproje.MyAdapter;
 import com.example.mobilprogramlamaproje.R;
-import com.example.mobilprogramlamaproje.RecylerViewClick;
 import com.example.mobilprogramlamaproje.egzersiz;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentGogus#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FragmentGogus extends Fragment implements RecylerViewClick {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FragmentGogus() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentGogus.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentGogus newInstance(String param1, String param2) {
-        FragmentGogus fragment = new FragmentGogus();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+public class FragmentGogus extends Fragment implements MyAdapter.SelectedUser {
 
     View view;
     List<egzersiz> egzersizList;
@@ -77,22 +44,112 @@ public class FragmentGogus extends Fragment implements RecylerViewClick {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Flutter Kicks",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Side Bridges",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Superman",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Hanging Leg Raise",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Bench Press",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Cable Crossover",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Decline Press",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Dips",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Dumbell Pullover",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Incline Dumbell Fly",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Inclined Push-ups",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Modified Push-ups",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Pec Deck Fly",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Push-Up",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Smith Machine-Bench Press",R.drawable.bacakkas));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList, (RecylerViewClick) this));
-
-
-
+        myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
 
         return view;
     }
 
     @Override
-    public void onItemClick(int position) {
+    public void selecteduser(egzersiz egz) {
 
+        if(egz.getAd().equals("Bench Press"))
+        {
+            FragmentChestBenchPress benchPress=new FragmentChestBenchPress();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,benchPress).commit();
+
+        }
+        else if(egz.getAd().equals("Cable Crossover"))
+        {
+            FragmentChestCableCrossover cableCrossover=new FragmentChestCableCrossover();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,cableCrossover).commit();
+
+        }
+        else if(egz.getAd().equals("Decline Press"))
+        {
+            FragmentChestDeclinePress declinePress=new FragmentChestDeclinePress();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,declinePress).commit();
+
+        }
+        else if(egz.getAd().equals("Dips"))
+        {
+            FragmentChestDips dips=new FragmentChestDips();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,dips).commit();
+
+        }
+        else if(egz.getAd().equals("Dumbell Pullover"))
+        {
+            FragmentChestDumbellPullover dumbellPullover=new FragmentChestDumbellPullover();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,dumbellPullover).commit();
+
+        }
+        else if(egz.getAd().equals("Incline Dumbell Fly"))
+        {
+            FragmentChestInclineDumbellFly chestInclineDumbellFly=new FragmentChestInclineDumbellFly();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,chestInclineDumbellFly).commit();
+
+        }
+        else if(egz.getAd().equals("Inclined Push-ups"))
+        {
+            FragmentChestInclinedPushups chestInclinedPushups=new FragmentChestInclinedPushups();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,chestInclinedPushups).commit();
+
+        }
+        else if(egz.getAd().equals("Modified Push-ups"))
+        {
+            FragmentChestModifiedPushups modifiedPushups=new FragmentChestModifiedPushups();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,modifiedPushups).commit();
+
+        }
+        else if(egz.getAd().equals("Pec Deck Fly"))
+        {
+            FragmentChestPecDeckFly pecDeckFly=new FragmentChestPecDeckFly();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,pecDeckFly).commit();
+
+        }else if(egz.getAd().equals("Push-Up"))
+        {
+            FragmentChestPushUp pushUp=new FragmentChestPushUp();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,pushUp).commit();
+
+        }else if(egz.getAd().equals("Smith Machine-Bench Press"))
+        {
+            FragmentChestSmithMachineBenchPress smithMachineBenchPress=new FragmentChestSmithMachineBenchPress();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentler,smithMachineBenchPress).commit();
+
+        }
     }
 }
