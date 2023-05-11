@@ -10,6 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.mobilprogramlamaproje.calculationfragments.Bazal_metabolizma_hizi;
+import com.example.mobilprogramlamaproje.calculationfragments.Gunluk_kalori_ihtiyaci;
+import com.example.mobilprogramlamaproje.calculationfragments.Gunluk_protein_ihtiyaci;
+import com.example.mobilprogramlamaproje.calculationfragments.Vucut_kitle_indeksi;
+import com.example.mobilprogramlamaproje.calculationfragments.Yag_orani;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Calculation#newInstance} factory method to
@@ -72,7 +78,7 @@ public class Calculation extends Fragment
             @Override
             public void onClick(View view)
             {
-                Intent intent11 = new Intent(getActivity().getApplication(),Bazal_metabolizma_hizi.class);
+                Intent intent11 = new Intent(getActivity().getApplication(), Bazal_metabolizma_hizi.class);
                 startActivity(intent11);
             }
         });
@@ -82,7 +88,7 @@ public class Calculation extends Fragment
             @Override
             public void onClick(View view)
             {
-                Intent intent12 = new Intent(getActivity().getApplication(),Gunluk_protein_ihtiyaci.class);
+                Intent intent12 = new Intent(getActivity().getApplication(), Gunluk_protein_ihtiyaci.class);
                 startActivity(intent12);
             }
         });
@@ -92,7 +98,7 @@ public class Calculation extends Fragment
             @Override
             public void onClick(View view)
             {
-                Intent intent13 = new Intent(getActivity().getApplication(),Yag_orani.class);
+                Intent intent13 = new Intent(getActivity().getApplication(), Yag_orani.class);
                 startActivity(intent13);
             }
         });
@@ -102,7 +108,7 @@ public class Calculation extends Fragment
             @Override
             public void onClick(View view)
             {
-                Intent intent14 = new Intent(getActivity().getApplication(),Gunluk_kalori_ihtiyaci.class);
+                Intent intent14 = new Intent(getActivity().getApplication(), Gunluk_kalori_ihtiyaci.class);
                 startActivity(intent14);
             }
         });
@@ -112,7 +118,7 @@ public class Calculation extends Fragment
             @Override
             public void onClick(View view)
             {
-                Intent intent15 = new Intent(getActivity().getApplication(),Vucut_kitle_indeksi.class);
+                Intent intent15 = new Intent(getActivity().getApplication(), Vucut_kitle_indeksi.class);
                 startActivity(intent15);
             }
         });

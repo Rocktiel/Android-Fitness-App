@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Bazal_metabolizma_hizi"
+    tools:context=".calculationfragments.Bazal_metabolizma_hizi"
     android:background="@drawable/arka4">
 
     <TextView

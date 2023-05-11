@@ -16,8 +16,9 @@
         android:background="#AEB6B9"
         android:src="@drawable/baseline_person_24"
         app:shapeAppearanceOverlay="@style/circular"
-        app:strokeColor="@color/white"
-        app:strokeWidth="3dp" />
+        app:strokeColor="@color/black"
+        app:strokeWidth="3dp"
+        android:scaleType="fitXY"/>
 
     <TextView
         android:id="@+id/textView"

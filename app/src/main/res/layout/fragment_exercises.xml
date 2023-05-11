@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Exercises"
-    android:background="@color/teal_200">
+    android:background="@drawable/egzersiz111">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
@@ -18,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:textSize="20sp"
-            android:text="CALCULATION"
+            android:text="EXERCISES"
             android:textColor="#282828" />
     </RelativeLayout>
 
