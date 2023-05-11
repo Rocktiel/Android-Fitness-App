@@ -21,7 +21,9 @@ public class MainActivity2 extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
         bottomNavi=findViewById(R.id.bottomnavi);
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragmentler,new Exercises()).commit();
@@ -46,6 +48,11 @@ public class MainActivity2 extends AppCompatActivity
                     case R.id.profile:
                     {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new ProfilFrag()).commit();
+                        break;
+                    }
+                    case R.id.training:
+                    {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new TrainingFrag()).commit();
                         break;
                     }
                 }

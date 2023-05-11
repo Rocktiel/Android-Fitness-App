@@ -14,19 +14,19 @@
         tools:ignore="ExtraText"
         tools:targetApi="31">
         <activity
-            android:name=".Vucut_kitle_indeksi"
+            android:name=".calculationfragments.Vucut_kitle_indeksi"
             android:exported="false" />
         <activity
-            android:name=".Gunluk_kalori_ihtiyaci"
+            android:name=".calculationfragments.Gunluk_kalori_ihtiyaci"
             android:exported="false" />
         <activity
-            android:name=".Yag_orani"
+            android:name=".calculationfragments.Yag_orani"
             android:exported="false" />
         <activity
-            android:name=".Gunluk_protein_ihtiyaci"
+            android:name=".calculationfragments.Gunluk_protein_ihtiyaci"
             android:exported="false" />
         <activity
-            android:name=".Bazal_metabolizma_hizi"
+            android:name=".calculationfragments.Bazal_metabolizma_hizi"
             android:exported="false" />
         <activity
             android:name=".Edit_Profile"

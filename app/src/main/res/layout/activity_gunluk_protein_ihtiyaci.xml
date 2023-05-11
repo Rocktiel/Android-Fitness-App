@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Gunluk_protein_ihtiyaci"
+    tools:context=".calculationfragments.Gunluk_protein_ihtiyaci"
     android:background="@drawable/arka4">
 
     <TextView
