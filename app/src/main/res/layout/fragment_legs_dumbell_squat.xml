@@ -1,14 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".legs.FragmentLegsDumbellSquat">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="400dp">
 
-</FrameLayout>
+        <VideoView
+            android:id="@+id/videoflutterkicks"
+            android:layout_width="411dp"
+            android:layout_height="200dp"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="405dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/arka61">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="162dp"
+            android:layout_marginTop="245dp"
+            android:background="@drawable/tasarim61"
+            android:fontFamily="@font/aa"
+            android:textColor="#282828"
+            android:text="+"
+            android:layout_centerHorizontal="true"
+            android:textSize="70sp" />
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="115dp"
+            android:background="@drawable/edit_text_tasarim"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"/>
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="159dp"
+            android:layout_marginTop="115dp"
+            android:background="@drawable/edit_text_tasarim"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"/>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="159dp"
+            android:layout_marginTop="80dp"
+            android:text="Repetition"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="115dp"
+            android:background="@drawable/edit_text_tasarim"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"/>
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="80dp"
+            android:text="Weight"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="80dp"
+            android:text="Set"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="ADD TRAINING"
+            android:textColor="#282828" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
