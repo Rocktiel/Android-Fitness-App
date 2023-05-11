@@ -11,5 +11,6 @@
         android:id="@+id/profile"
         android:icon="@drawable/naviprofile"/>
     <item android:title="Training"
-        android:id="@+id/training"/>
+        android:id="@+id/training"
+        android:icon="@drawable/antreman"/>
 </menu>
