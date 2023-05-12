@@ -1,5 +1,9 @@
 package com.example.mobilprogramlamaproje.sixpack;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -8,7 +12,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.MediaController;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.mobilprogramlamaproje.R;
@@ -60,6 +67,9 @@ public class FragmentSixpackFlutterKicks extends Fragment {
         }
     }
 
+    Button button;
+    EditText weight,set,tekrar;
+    SQLiteDatabase db;
     View view;
     VideoView vv;
     @Override
@@ -71,13 +81,48 @@ public class FragmentSixpackFlutterKicks extends Fragment {
 
         String videoPath="android.resource://" +"com.example.mobilprogramlamaproje"+ "/" + R.raw.video;
 
-
         Uri uri=Uri.parse(videoPath);
         vv.setVideoURI(uri);
         MediaController media=new MediaController(view.getContext());
         vv.setMediaController(media);
         media.setAnchorView(vv);
 
+        button=view.findViewById(R.id.add);
+        weight=view.findViewById(R.id.weight);
+        set=view.findViewById(R.id.set);
+        tekrar=view.findViewById(R.id.rep);
+
+        Intent ii=getActivity().getIntent();
+        String un=ii.getStringExtra("nickname");
+
+        String ad="Flutter Kicks";
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String weightt=weight.getText().toString();
+                String sett=set.getText().toString();
+                String tekrarr=tekrar.getText().toString();
+                if(weightt.length()==0 || sett.length()==0 || tekrarr.length()==0 )
+                {
+                    Toast.makeText(getContext(), "Boş olamaz.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    try{
+                        db=view.getContext().openOrCreateDatabase(un,MODE_PRIVATE,null);
+                        db.execSQL("CREATE TABLE IF NOT EXISTS denemeantrenman (id INTEGER PRIMARY KEY , name VARCHAR, weight VARCHAR, setsayi VARCHAR, tekrarsayi VARCHAR )");
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+                    db.execSQL("INSERT INTO denemeantrenman(name,weight,setsayi,tekrarsayi) VALUES('"+ad+"','"+weightt+"','"+sett+"','"+tekrarr+"')");
+                    Toast.makeText(getContext(), "Kayıt başarılı.", Toast.LENGTH_SHORT).show();
+                    weight.setText("");
+                    set.setText("");
+                    tekrar.setText("");
+                }
+            }
+        });
         return view;
     }
 }
