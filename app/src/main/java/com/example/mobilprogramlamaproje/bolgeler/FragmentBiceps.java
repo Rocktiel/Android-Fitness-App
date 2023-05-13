@@ -44,17 +44,17 @@ public class FragmentBiceps extends Fragment implements MyAdapter.SelectedUser {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Cable Chest Compression",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Cable Curl",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Concentration Curl",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbbell Preacher Curl",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Hammer Curl",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Incline Reverse Dumbbell Press",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Reverse Barbell Curl",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Scot Curl Z-Bar",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Seated Dumbbell Curl",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Seated Hammer Curl",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Single Arm Cable Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Cable Chest Compression",R.drawable.compression1));
+        egzersizList.add(new egzersiz("Cable Curl",R.drawable.curl1));
+        egzersizList.add(new egzersiz("Concentration Curl",R.drawable.concentrationcurl1));
+        egzersizList.add(new egzersiz("Dumbbell Preacher Curl",R.drawable.dumbbellpreachercurl1));
+        egzersizList.add(new egzersiz("Hammer Curl",R.drawable.hammercurl1));
+        egzersizList.add(new egzersiz("Incline Reverse Dumbbell Press",R.drawable.nclinereversedumbbellpress1));
+        egzersizList.add(new egzersiz("Reverse Barbell Curl",R.drawable.reversebarbellcurl1));
+        egzersizList.add(new egzersiz("Scot Curl Z-Bar",R.drawable.scotcurlzbar1));
+        egzersizList.add(new egzersiz("Seated Dumbbell Curl",R.drawable.seateddumbbellcurl1));
+        egzersizList.add(new egzersiz("Seated Hammer Curl",R.drawable.seatedhammercurl1));
+        egzersizList.add(new egzersiz("Single Arm Cable Curl",R.drawable.singlearmcablecurl1));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));

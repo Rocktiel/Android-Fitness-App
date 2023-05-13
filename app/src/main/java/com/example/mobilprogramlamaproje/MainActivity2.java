@@ -37,22 +37,22 @@ public class MainActivity2 extends AppCompatActivity
                 {
                     case R.id.exercises:
                     {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new Exercises()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new Exercises()).addToBackStack(null).commit();
                         break;
                     }
                     case R.id.calculation:
                     {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new Calculation()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new Calculation()).addToBackStack(null).commit();
                         break;
                     }
                     case R.id.profile:
                     {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new ProfilFrag()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new ProfilFrag()).addToBackStack(null).commit();
                         break;
                     }
                     case R.id.training:
                     {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new TrainingFrag()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new TrainingFrag()).addToBackStack(null).commit();
                         break;
                     }
                 }

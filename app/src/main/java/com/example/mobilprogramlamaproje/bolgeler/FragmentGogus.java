@@ -44,17 +44,17 @@ public class FragmentGogus extends Fragment implements MyAdapter.SelectedUser {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Bench Press",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Cable Crossover",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Decline Press",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dips",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbell Pullover",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Incline Dumbell Fly",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Inclined Push-ups",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Modified Push-ups",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Pec Deck Fly",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Push-Up",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Smith Machine-Bench Press",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Bench Press",R.drawable.benchpress1));
+        egzersizList.add(new egzersiz("Cable Crossover",R.drawable.cablecrossover1));
+        egzersizList.add(new egzersiz("Decline Press",R.drawable.declinepress1));
+        egzersizList.add(new egzersiz("Dips",R.drawable.ddips1));
+        egzersizList.add(new egzersiz("Dumbell Pullover",R.drawable.dumbbelpullover1));
+        egzersizList.add(new egzersiz("Incline Dumbell Fly",R.drawable.inclinedumbbellfly1));
+        egzersizList.add(new egzersiz("Inclined Push-ups",R.drawable.inclinedpushups1));
+        egzersizList.add(new egzersiz("Modified Push-ups",R.drawable.modifiedpushups1));
+        egzersizList.add(new egzersiz("Pec Deck Fly",R.drawable.pecdeckfly1));
+        egzersizList.add(new egzersiz("Push-Up",R.drawable.pppushup1));
+        egzersizList.add(new egzersiz("Smith Machine-Bench Press",R.drawable.smithmachinebenchpress1));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));

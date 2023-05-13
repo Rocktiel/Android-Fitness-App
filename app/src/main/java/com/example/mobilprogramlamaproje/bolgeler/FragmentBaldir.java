@@ -41,14 +41,15 @@ public class FragmentBaldir extends Fragment implements MyAdapter.SelectedUser {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Barbell Calf Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Barbell Seated Calf Raise One Leg",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Barbell Seated Calf Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbbell Seated Calf Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbbell Vault",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("One-Arm Push-Ups",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise One Toe",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Barbell Calf Raise",R.drawable.barbellcalfraise1));
+        egzersizList.add(new egzersiz("Barbell Seated Calf Raise One Leg",R.drawable.aaleg1));
+        egzersizList.add(new egzersiz("Barbell Seated Calf Raise",R.drawable.aaaaaraise1));
+        egzersizList.add(new egzersiz("Dumbbell Seated Calf Raise",R.drawable.bbbbbraise1));
+        egzersizList.add(new egzersiz("Dumbbell Vault",R.drawable.vault1));
+        egzersizList.add(new egzersiz("One-Arm Push-Ups",R.drawable.pushups1));
+        egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise One Toe",R.drawable.onetoe1));
+        egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise",R.drawable.dddddraise1));
+        egzersizList.add(new egzersiz("Seated Calf Raise Machine",R.drawable.seatedcalfraisemachine1));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));

@@ -45,18 +45,18 @@ public class FragmentOmuzlar extends Fragment implements MyAdapter.SelectedUser 
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Arnold Press",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Barbell Front Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Barbell Shoulder Press",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Behind The Neck Press",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Bent Over Cable Lateral Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbbell Front Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbbell Shoulder Press",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Lateral Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("One Arm Cable Lateral Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Seated Lateral Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Upright Row",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Weight Plate Front Raises",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Arnold Press",R.drawable.arnoldpress1));
+        egzersizList.add(new egzersiz("Barbell Front Raise",R.drawable.barbellfrontraise1));
+        egzersizList.add(new egzersiz("Barbell Shoulder Press",R.drawable.barbellshoulderpress1));
+        egzersizList.add(new egzersiz("Behind The Neck Press",R.drawable.behindtheneckpress1));
+        egzersizList.add(new egzersiz("Bent Over Cable Lateral Raise",R.drawable.bentovercablelateralraise1));
+        egzersizList.add(new egzersiz("Dumbbell Front Raise",R.drawable.dumbbellfrontraise1));
+        egzersizList.add(new egzersiz("Dumbbell Shoulder Press",R.drawable.dumbbellshoulderpress1));
+        egzersizList.add(new egzersiz("Lateral Raise",R.drawable.lateralraise1));
+        egzersizList.add(new egzersiz("One Arm Cable Lateral Raise",R.drawable.onearmcablelateralraise1));
+        egzersizList.add(new egzersiz("Seated Lateral Raise",R.drawable.seatedlateralraise1));
+        egzersizList.add(new egzersiz("Upright Row",R.drawable.uprightrow1));
+        egzersizList.add(new egzersiz("Weight Plate Front Raises",R.drawable.weightplatefrontraises1));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
