@@ -4,16 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".chest.FragmentChestDumbellPullover">
-
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="400dp">
+        android:layout_height="325dp">
 
         <VideoView
             android:id="@+id/videoflutterkicks"
             android:layout_width="411dp"
             android:layout_height="200dp"
-            android:layout_centerVertical="true" />
+            android:layout_marginTop="15dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -34,42 +33,48 @@
             android:textColor="#282828"
             android:text="+"
             android:layout_centerHorizontal="true"
-            android:textSize="70sp" />
+            android:textSize="70sp"
+            android:id="@+id/add"/>
 
         <EditText
+            android:id="@+id/weight"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="115dp"
+            android:maxLength="3"
             android:background="@drawable/edit_text_tasarim"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"/>
+            android:gravity="center"
+            />
 
         <EditText
+            android:id="@+id/set"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="159dp"
-            android:layout_marginTop="117dp"
+            android:layout_marginTop="115dp"
+            android:maxLength="2"
             android:background="@drawable/edit_text_tasarim"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp" />
+            android:gravity="center"
+            />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="159dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="290dp"
             android:layout_marginTop="80dp"
             android:text="Repetition"
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/rep"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentRight="true"
@@ -77,8 +82,9 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="115dp"
             android:background="@drawable/edit_text_tasarim"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"/>
+            android:gravity="center"
+            android:maxLength="3"
+            />
 
         <TextView
             android:id="@+id/textView16"
@@ -95,12 +101,12 @@
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="320dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="193dp"
             android:layout_marginTop="80dp"
             android:text="Set"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView15"

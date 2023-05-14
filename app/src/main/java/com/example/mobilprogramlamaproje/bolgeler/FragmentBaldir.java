@@ -2,6 +2,7 @@ package com.example.mobilprogramlamaproje.bolgeler;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.Exercises;
 import com.example.mobilprogramlamaproje.calf.FragmentBarbellSeatedCalfRaise;
 import com.example.mobilprogramlamaproje.calf.FragmentBarbellSeatedCalfRaiseOneLeg;
 import com.example.mobilprogramlamaproje.calf.FragmentCalfBarbellCalfRaise;
@@ -41,19 +43,40 @@ public class FragmentBaldir extends Fragment implements MyAdapter.SelectedUser {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Barbell Calf Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Barbell Seated Calf Raise One Leg",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Barbell Seated Calf Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbbell Seated Calf Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbbell Vault",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("One-Arm Push-Ups",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise One Toe",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Barbell Calf Raise",R.drawable.barbellcalfraise1));
+        egzersizList.add(new egzersiz("Barbell Seated Calf Raise One Leg",R.drawable.aaleg1));
+        egzersizList.add(new egzersiz("Barbell Seated Calf Raise",R.drawable.aaaaaraise1));
+        egzersizList.add(new egzersiz("Dumbbell Seated Calf Raise",R.drawable.bbbbbraise1));
+        egzersizList.add(new egzersiz("Dumbbell Vault",R.drawable.vault1));
+        egzersizList.add(new egzersiz("One-Arm Push-Ups",R.drawable.pushups1));
+        egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise One Toe",R.drawable.onetoe1));
+        egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise",R.drawable.dddddraise1));
+        egzersizList.add(new egzersiz("Seated Calf Raise Machine",R.drawable.seatedcalfraisemachine1));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
 
+        setupBackOnPressed();
+
         return view;
+    }
+
+    private void setupBackOnPressed()
+    {
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
+        {
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(isEnabled())
+                {
+                    Exercises exercises =new Exercises();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragmentler,exercises).commit();
+                }
+            }
+        });
     }
 
     @Override

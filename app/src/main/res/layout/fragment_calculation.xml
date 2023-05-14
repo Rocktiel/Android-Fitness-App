@@ -15,10 +15,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="43dp"
         android:layout_marginTop="134dp"
-        android:background="@drawable/calculatonitembg"
-        android:paddingHorizontal="15dp"
-
-        android:text="Basal Metabolic Rate" />
+        android:background="@drawable/ozelbutton1"
+        android:paddingHorizontal="15dp" />
 
     <Button
         android:id="@+id/Gunluk_protein_ihtiyaci"
@@ -28,9 +26,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="227dp"
         android:layout_marginTop="134dp"
-        android:background="@drawable/calculatonitembg"
-        android:paddingHorizontal="15dp"
-        android:text="Daily Protein Need" />
+        android:background="@drawable/ozelbutton2"
+        android:paddingHorizontal="15dp" />
 
     <Button
         android:id="@+id/yag_orani"
@@ -40,9 +37,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="135dp"
         android:layout_marginTop="500dp"
-        android:background="@drawable/calculatonitembg"
-        android:paddingHorizontal="15dp"
-        android:text="Fat Rate" />
+        android:background="@drawable/ozelbutton"
+        android:paddingHorizontal="15dp" />
 
     <Button
         android:id="@+id/Gunluk_Kalori_ihtiyaci"
@@ -52,9 +48,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="43dp"
         android:layout_marginTop="317dp"
-        android:background="@drawable/calculatonitembg"
-        android:paddingHorizontal="15dp"
-        android:text="Daily Calorie Needs" />
+        android:background="@drawable/ozelbutton3"
+        android:paddingHorizontal="15dp"/>
 
     <Button
         android:id="@+id/vucut_kitle_indeksi"
@@ -64,9 +59,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="227dp"
         android:layout_marginTop="317dp"
-        android:background="@drawable/calculatonitembg"
-        android:paddingHorizontal="15dp"
-        android:text="Body Mass Index" />
+        android:background="@drawable/ozelbutton4"
+        android:paddingHorizontal="15dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"

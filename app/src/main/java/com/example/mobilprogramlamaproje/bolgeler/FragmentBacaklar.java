@@ -2,6 +2,7 @@ package com.example.mobilprogramlamaproje.bolgeler;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.Exercises;
 import com.example.mobilprogramlamaproje.legs.FragmentLegsBulgarianSquat;
 import com.example.mobilprogramlamaproje.legs.FragmentLegsDumbellLunge;
 import com.example.mobilprogramlamaproje.legs.FragmentLegsDumbellSquat;
@@ -43,21 +45,42 @@ public class FragmentBacaklar extends Fragment implements MyAdapter.SelectedUser
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Bulgarian Squat",R.drawable.ghgh));
-        egzersizList.add(new egzersiz("Dumbell Lunge",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbell Squat",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Hack Squat",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Leg Extension",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Leg Press",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("One Arm To The Side Deadlift",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("One-Legged Collapse",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Squat",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Standing Leg Curl",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Bulgarian Squat",R.drawable.bulgariansquat));
+        egzersizList.add(new egzersiz("Dumbell Lunge",R.drawable.lunge));
+        egzersizList.add(new egzersiz("Dumbell Squat",R.drawable.squat));
+        egzersizList.add(new egzersiz("Hack Squat",R.drawable.hacksquat));
+        egzersizList.add(new egzersiz("Leg Extension",R.drawable.legextension));
+        egzersizList.add(new egzersiz("Leg Press",R.drawable.legpress));
+        egzersizList.add(new egzersiz("One Arm To The Side Deadlift",R.drawable.deadlift1));
+        egzersizList.add(new egzersiz("One-Legged Collapse",R.drawable.collapse));
+        egzersizList.add(new egzersiz("Squat",R.drawable.squat1));
+        egzersizList.add(new egzersiz("Standing Leg Curl",R.drawable.standing));
+        egzersizList.add(new egzersiz("Steated Leg Curl",R.drawable.seatedlegcurl1));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
 
+        setupBackOnPressed();
+
         return view;
+    }
+
+    private void setupBackOnPressed()
+    {
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
+        {
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(isEnabled())
+                {
+                    Exercises exercises =new Exercises();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragmentler,exercises).commit();
+                }
+            }
+        });
     }
 
     @Override

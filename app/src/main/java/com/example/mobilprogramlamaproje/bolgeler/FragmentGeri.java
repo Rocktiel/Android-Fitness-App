@@ -2,6 +2,7 @@ package com.example.mobilprogramlamaproje.bolgeler;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.Exercises;
 import com.example.mobilprogramlamaproje.back.FragmentBackBarfixReverseGrip;
 import com.example.mobilprogramlamaproje.back.FragmentBackBumbellShrug;
 import com.example.mobilprogramlamaproje.back.FragmentBackDumbellRow;
@@ -44,22 +46,42 @@ public class FragmentGeri extends Fragment implements MyAdapter.SelectedUser {
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Bumbell Shrug",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbell Row",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Dumbell Shrug",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Let Pull Down",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Pull Up",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Seated Cable Row",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Hyper Extension",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Bent Over Two Arm Dumbell Row",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Superman",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("T-Bar Row",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Barfix Reverse Grip",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Bumbell Shrug",R.drawable.bumbellshrug1));
+        egzersizList.add(new egzersiz("Dumbell Row",R.drawable.dambilrow1));
+        egzersizList.add(new egzersiz("Dumbell Shrug",R.drawable.dambilshrug1));
+        egzersizList.add(new egzersiz("Let Pull Down",R.drawable.letpulldown1));
+        egzersizList.add(new egzersiz("Pull Up",R.drawable.pullup1));
+        egzersizList.add(new egzersiz("Seated Cable Row",R.drawable.seatedcablerow1));
+        egzersizList.add(new egzersiz("Hyper Extension",R.drawable.tersmekik1));
+        egzersizList.add(new egzersiz("Bent Over Two Arm Dumbell Row",R.drawable.bentovertwoarmdumbbellrow1));
+        egzersizList.add(new egzersiz("Superman",R.drawable.sssssssssssuperman1));
+        egzersizList.add(new egzersiz("T-Bar Row",R.drawable.tbarrow1));
+        egzersizList.add(new egzersiz("Barfix Reverse Grip",R.drawable.tersbarfiks1));
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
 
+        setupBackOnPressed();
+
         return view;
+    }
+
+    private void setupBackOnPressed()
+    {
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
+        {
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(isEnabled())
+                {
+                    Exercises exercises =new Exercises();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragmentler,exercises).commit();
+                }
+            }
+        });
     }
 
     @Override

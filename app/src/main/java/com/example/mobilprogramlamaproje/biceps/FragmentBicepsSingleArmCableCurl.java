@@ -1,14 +1,27 @@
 package com.example.mobilprogramlamaproje.biceps;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.mobilprogramlamaproje.R;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentBiceps;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentGeri;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +70,67 @@ public class FragmentBicepsSingleArmCableCurl extends Fragment {
         }
     }
 
+    Button button;
+    EditText weight,set,tekrar;
+    SQLiteDatabase db;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_biceps_single_arm_cable_curl, container, false);
+        View view=inflater.inflate(R.layout.fragment_biceps_single_arm_cable_curl, container, false);
+
+        button=view.findViewById(R.id.add);
+        weight=view.findViewById(R.id.weight);
+        set=view.findViewById(R.id.set);
+        tekrar=view.findViewById(R.id.rep);
+
+        Intent ii=getActivity().getIntent();
+        String un=ii.getStringExtra("nickname");
+
+        String ad="Single Arm Cable Curl";
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String weightt=weight.getText().toString();
+                String sett=set.getText().toString();
+                String tekrarr=tekrar.getText().toString();
+                if(weightt.length()==0 || sett.length()==0 || tekrarr.length()==0 )
+                {
+                    Toast.makeText(getContext(), "Boş olamaz.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    try{
+                        db=view.getContext().openOrCreateDatabase(un,MODE_PRIVATE,null);
+                        db.execSQL("CREATE TABLE IF NOT EXISTS denemeantrenman (id INTEGER PRIMARY KEY , name VARCHAR, weight VARCHAR, setsayi VARCHAR, tekrarsayi VARCHAR )");
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+                    db.execSQL("INSERT INTO denemeantrenman(name,weight,setsayi,tekrarsayi) VALUES('"+ad+"','"+weightt+"','"+sett+"','"+tekrarr+"')");
+                    Toast.makeText(getContext(), "Kayıt başarılı.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        setupBackOnPressed();
+        return view;
+    }
+    private void setupBackOnPressed()
+    {
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
+        {
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(isEnabled())
+                {
+                    FragmentBiceps fragmentBiceps =new FragmentBiceps();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragmentler,fragmentBiceps).commit();
+                }
+            }
+        });
     }
 }
