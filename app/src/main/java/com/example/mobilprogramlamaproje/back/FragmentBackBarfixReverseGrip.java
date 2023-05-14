@@ -7,7 +7,10 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +19,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.mobilprogramlamaproje.Exercises;
 import com.example.mobilprogramlamaproje.Kayit_Olma;
 import com.example.mobilprogramlamaproje.R;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentGeri;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -111,6 +116,26 @@ public class FragmentBackBarfixReverseGrip extends Fragment {
                 }
             }
         });
+
+        setupBackOnPressed();
+
         return view;
+    }
+    private void setupBackOnPressed()
+    {
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
+        {
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(isEnabled())
+                {
+                    FragmentGeri fragmentGeri =new FragmentGeri();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragmentler,fragmentGeri).commit();
+                }
+            }
+        });
     }
 }

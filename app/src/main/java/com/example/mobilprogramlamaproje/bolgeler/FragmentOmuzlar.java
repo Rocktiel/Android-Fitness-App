@@ -2,6 +2,7 @@ package com.example.mobilprogramlamaproje.bolgeler;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.Exercises;
 import com.example.mobilprogramlamaproje.shoulder.FragmentShoulderArnoldPress;
 import com.example.mobilprogramlamaproje.shoulder.FragmentShoulderBarbellFrontRaise;
 import com.example.mobilprogramlamaproje.shoulder.FragmentShoulderBarbellShoulderPress;
@@ -61,7 +63,27 @@ public class FragmentOmuzlar extends Fragment implements MyAdapter.SelectedUser 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
 
+        setupBackOnPressed();
+
         return view;
+    }
+
+    private void setupBackOnPressed()
+    {
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
+        {
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(isEnabled())
+                {
+                    Exercises exercises =new Exercises();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragmentler,exercises).commit();
+                }
+            }
+        });
     }
 
     @Override

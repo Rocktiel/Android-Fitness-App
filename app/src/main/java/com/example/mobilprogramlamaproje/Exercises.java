@@ -1,7 +1,9 @@
 package com.example.mobilprogramlamaproje;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -26,7 +28,8 @@ import com.example.mobilprogramlamaproje.bolgeler.FragmentTriceps;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Exercises extends Fragment implements MyAdapter.SelectedUser {
+public class Exercises extends Fragment implements MyAdapter.SelectedUser
+{
     View view;
 
     RecyclerView rv;
@@ -36,8 +39,8 @@ public class Exercises extends Fragment implements MyAdapter.SelectedUser {
     SearchView sv;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
 
         view=inflater.inflate(R.layout.fragment_exercises, container, false);
 
@@ -72,10 +75,12 @@ public class Exercises extends Fragment implements MyAdapter.SelectedUser {
                 return true;
             }
         });
+
         return view;
     }
 
-    private void filterList(String text) {
+    private void filterList(String text)
+    {
         List<egzersiz> filteredList=new ArrayList<>();
         for(egzersiz person1 : egzersizList){
             if(person1.getAd().toLowerCase().contains(text.toLowerCase())){
@@ -86,71 +91,79 @@ public class Exercises extends Fragment implements MyAdapter.SelectedUser {
     }
 
     @Override
-    public void selecteduser(egzersiz egz) {
+    public void selecteduser(egzersiz egz)
+    {
 
-        if(egz.getAd().equals("Sixpack")){
+        if(egz.getAd().equals("Sixpack"))
+        {
             FragmentKarinKas karinkas=new FragmentKarinKas();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,karinkas).commit();
 
         }
-        else if(egz.getAd().equals("Biceps")){
+        else if(egz.getAd().equals("Biceps"))
+        {
             FragmentBiceps biceps=new FragmentBiceps();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,biceps).commit();
 
         }
-        else if(egz.getAd().equals("Calf")){
+        else if(egz.getAd().equals("Calf"))
+        {
             FragmentBaldir baldir=new FragmentBaldir();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,baldir).commit();
 
         }
-        else if(egz.getAd().equals("Chest")){
+        else if(egz.getAd().equals("Chest"))
+        {
             FragmentGogus gogus=new FragmentGogus();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,gogus).commit();
 
         }
-        else if(egz.getAd().equals("Forearm")){
+        else if(egz.getAd().equals("Forearm"))
+        {
             FragmentOnKollar onkollar=new FragmentOnKollar();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,onkollar).commit();
 
         }
-        else if(egz.getAd().equals("Legs")){
+        else if(egz.getAd().equals("Legs"))
+        {
             FragmentBacaklar bacak=new FragmentBacaklar();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,bacak).commit();
 
         }
-        else if(egz.getAd().equals("Shoulder")){
+        else if(egz.getAd().equals("Shoulder"))
+        {
             FragmentOmuzlar omuz=new FragmentOmuzlar();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,omuz).commit();
-
         }
-        else if(egz.getAd().equals("Triceps")){
+        else if(egz.getAd().equals("Triceps"))
+        {
             FragmentTriceps triceps=new FragmentTriceps();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,triceps).commit();
-
         }
-        else if(egz.getAd().equals("Back")){
+        else if(egz.getAd().equals("Back"))
+        {
             FragmentGeri geri=new FragmentGeri();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentler,geri).commit();
-
         }
 
     }
+
 }
