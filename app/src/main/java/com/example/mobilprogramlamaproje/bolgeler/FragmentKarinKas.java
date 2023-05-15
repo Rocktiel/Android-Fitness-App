@@ -1,7 +1,9 @@
 package com.example.mobilprogramlamaproje.bolgeler;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilprogramlamaproje.Exercises;
+import com.example.mobilprogramlamaproje.MainActivity2;
 import com.example.mobilprogramlamaproje.sixpack.FragmentHangingLegRaise;
 import com.example.mobilprogramlamaproje.sixpack.FragmentInclineCrunch;
 import com.example.mobilprogramlamaproje.sixpack.FragmentSideBridges;
@@ -30,8 +34,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FragmentKarinKas extends Fragment implements MyAdapter.SelectedUser {
-
+public class FragmentKarinKas extends Fragment implements MyAdapter.SelectedUser
+{
     View view;
     List<egzersiz> egzersizList;
     RecyclerView myrecycler;
@@ -44,21 +48,41 @@ public class FragmentKarinKas extends Fragment implements MyAdapter.SelectedUser
 
         egzersizList=new ArrayList<egzersiz>();
 
-        egzersizList.add(new egzersiz("Dumbell Lean Over",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Fingertip Touch",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Flutter Kicks",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Hanging Leg Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Incline Crunch",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Incline Leg Raise",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Leg Lowers",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Crunch",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Oblique Twists",R.drawable.bacakkas));
-        egzersizList.add(new egzersiz("Side Bridges",R.drawable.bacakkas));
+        egzersizList.add(new egzersiz("Dumbell Lean Over",R.drawable.dumbelleanover1));
+        egzersizList.add(new egzersiz("Fingertip Touch",R.drawable.fingertiptouch1));
+        egzersizList.add(new egzersiz("Flutter Kicks",R.drawable.flutterkicks1));
+        egzersizList.add(new egzersiz("Hanging Leg Raise",R.drawable.hanginglegraise1));
+        egzersizList.add(new egzersiz("Incline Crunch",R.drawable.inclinecrunch1));
+        egzersizList.add(new egzersiz("Incline Leg Raise",R.drawable.inclinelegraise1));
+        egzersizList.add(new egzersiz("Leg Lowers",R.drawable.leglowers1));
+        egzersizList.add(new egzersiz("Crunch",R.drawable.mmmmmmmekik1));
+        egzersizList.add(new egzersiz("Oblique Twists",R.drawable.obliquetwists1));
+        egzersizList.add(new egzersiz("Side Bridges",R.drawable.sidebridges1));
+
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
 
+        setupBackOnPressed();
         return view;
+    }
+
+    private void setupBackOnPressed()
+    {
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
+        {
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(isEnabled())
+                {
+                    Exercises exercises =new Exercises();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragmentler,exercises).commit();
+                }
+            }
+        });
     }
 
     @Override

@@ -7,7 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +22,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.mobilprogramlamaproje.R;
+import com.example.mobilprogramlamaproje.bolgeler.FragmentKarinKas;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,7 +83,7 @@ public class FragmentSixpackFlutterKicks extends Fragment {
         view=inflater.inflate(R.layout.fragment_flutter_kicks, container, false);
         vv=view.findViewById(R.id.videoflutterkicks);
 
-        String videoPath="android.resource://" +"com.example.mobilprogramlamaproje"+ "/" + R.raw.video;
+        String videoPath="android.resource://" +"com.example.mobilprogramlamaproje"+ "/" + R.raw.flutterkicksvideo;
 
         Uri uri=Uri.parse(videoPath);
         vv.setVideoURI(uri);
@@ -123,6 +127,24 @@ public class FragmentSixpackFlutterKicks extends Fragment {
                 }
             }
         });
+        setupBackOnPressed();
         return view;
+    }
+    private void setupBackOnPressed()
+    {
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
+        {
+            @Override
+            public void handleOnBackPressed()
+            {
+                if(isEnabled())
+                {
+                    FragmentKarinKas fragmentKarinKas =new FragmentKarinKas();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.fragmentler,fragmentKarinKas).commit();
+                }
+            }
+        });
     }
 }

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -37,10 +39,8 @@ public class MainActivity extends AppCompatActivity
         Password=findViewById(R.id.password);
         String gfhgfhj=signup.getText().toString();
 
-
-
-
-        try{
+        try
+        {
 
             db=this.openOrCreateDatabase("Denemee",MODE_PRIVATE,null);
             db.execSQL("CREATE TABLE IF NOT EXISTS denemeusers (id INTEGER PRIMARY KEY ,username VARCHAR, name VARCHAR, surname VARCHAR, password VARCHAR, age VARCHAR, weight VARCHAR, height VARCHAR,image VARCHAR )");
@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        signin.setOnClickListener(new View.OnClickListener() {
+        signin.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
 
@@ -97,6 +98,21 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+    }
 
+    @Override
+    public void onBackPressed()
+    {
+        new AlertDialog.Builder(this).setMessage("Are you sure want to exit ?").setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        finish();
+                    }
+                }).setNegativeButton("No",null).show();
+
+        super.onBackPressed();
     }
 }
