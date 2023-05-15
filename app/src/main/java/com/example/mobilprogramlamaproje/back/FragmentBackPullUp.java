@@ -5,6 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -17,7 +18,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.MediaController;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.example.mobilprogramlamaproje.R;
 import com.example.mobilprogramlamaproje.bolgeler.FragmentGeri;
@@ -78,6 +81,17 @@ public class FragmentBackPullUp extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_back_pull_up, container, false);
+
+        VideoView vv;
+        vv=view.findViewById(R.id.videoflutterkicks);
+
+        String videoPath="android.resource://" +"com.example.mobilprogramlamaproje"+ "/" + R.raw.pullupvideo;
+
+        Uri uri=Uri.parse(videoPath);
+        vv.setVideoURI(uri);
+        MediaController media=new MediaController(view.getContext());
+        vv.setMediaController(media);
+        media.setAnchorView(vv);
 
         button=view.findViewById(R.id.add);
         weight=view.findViewById(R.id.weight);

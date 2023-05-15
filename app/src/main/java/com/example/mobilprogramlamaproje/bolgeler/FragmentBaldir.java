@@ -51,7 +51,7 @@ public class FragmentBaldir extends Fragment implements MyAdapter.SelectedUser {
         egzersizList.add(new egzersiz("One-Arm Push-Ups",R.drawable.pushups1));
         egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise One Toe",R.drawable.onetoe1));
         egzersizList.add(new egzersiz("Standing Dumbbell Calf Raise",R.drawable.dddddraise1));
-        egzersizList.add(new egzersiz("Seated Calf Raise Machine",R.drawable.seatedcalfraisemachine1));
+
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));

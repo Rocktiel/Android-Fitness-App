@@ -55,7 +55,7 @@ public class FragmentBacaklar extends Fragment implements MyAdapter.SelectedUser
         egzersizList.add(new egzersiz("One-Legged Collapse",R.drawable.collapse));
         egzersizList.add(new egzersiz("Squat",R.drawable.squat1));
         egzersizList.add(new egzersiz("Standing Leg Curl",R.drawable.standing));
-        egzersizList.add(new egzersiz("Steated Leg Curl",R.drawable.seatedlegcurl1));
+
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));
