@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.mobilprogramlamaproje.back.FragmentBackBarfixReverseGrip;
 import com.example.mobilprogramlamaproje.back.FragmentBackBumbellShrug;
@@ -160,6 +161,7 @@ public class TrainingFrag extends Fragment implements MyAdapterTraining.Selected
 
     RecyclerView rv;
 
+    Button del;
     List<antrenman> antrenmanList;
 
     SQLiteDatabase db;
@@ -169,6 +171,36 @@ public class TrainingFrag extends Fragment implements MyAdapterTraining.Selected
                              Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_training, container, false);
 
+        del=view.findViewById(R.id.deletebutton);
+
+
+        pull();
+
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent ii=getActivity().getIntent();
+                String un=ii.getStringExtra("nickname");
+
+                try{
+
+                    db=view.getContext().openOrCreateDatabase(un,MODE_PRIVATE,null);
+
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+
+                db.execSQL("DROP TABLE IF EXISTS denemeantrenman");
+
+                pull();
+            }
+        });
+
+        return view;
+    }
+
+    public void pull(){
         Intent ii=getActivity().getIntent();
         String un=ii.getStringExtra("nickname");
 
@@ -208,7 +240,6 @@ public class TrainingFrag extends Fragment implements MyAdapterTraining.Selected
         rv.setAdapter(new MyAdapterTraining(view.getContext(),antrenmanList, (MyAdapterTraining.SelectedUserTra) this));
 
 
-        return view;
     }
 
     @Override

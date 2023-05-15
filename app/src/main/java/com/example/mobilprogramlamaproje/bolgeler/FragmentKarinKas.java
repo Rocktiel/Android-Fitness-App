@@ -58,7 +58,7 @@ public class FragmentKarinKas extends Fragment implements MyAdapter.SelectedUser
         egzersizList.add(new egzersiz("Crunch",R.drawable.mmmmmmmekik1));
         egzersizList.add(new egzersiz("Oblique Twists",R.drawable.obliquetwists1));
         egzersizList.add(new egzersiz("Side Bridges",R.drawable.sidebridges1));
-        egzersizList.add(new egzersiz("Superman",R.drawable.sssuperman1));
+
 
         myrecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         myrecycler.setAdapter(new MyAdapter(view.getContext(),egzersizList,this));

@@ -83,7 +83,7 @@ public class FragmentSixpackFlutterKicks extends Fragment {
         view=inflater.inflate(R.layout.fragment_flutter_kicks, container, false);
         vv=view.findViewById(R.id.videoflutterkicks);
 
-        String videoPath="android.resource://" +"com.example.mobilprogramlamaproje"+ "/" + R.raw.video;
+        String videoPath="android.resource://" +"com.example.mobilprogramlamaproje"+ "/" + R.raw.flutterkicksvideo;
 
         Uri uri=Uri.parse(videoPath);
         vv.setVideoURI(uri);
