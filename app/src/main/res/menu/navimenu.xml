@@ -13,4 +13,7 @@
     <item android:title="Training"
         android:id="@+id/training"
         android:icon="@drawable/antreman"/>
+    <item android:title="Calories"
+        android:id="@+id/colari"
+        android:icon="@drawable/kalori"/>
 </menu>
