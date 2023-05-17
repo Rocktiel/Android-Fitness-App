@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrainingFrag">
+    tools:context=".TrainingFrag"
+    android:background="@drawable/arka123">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,21 +24,25 @@
         <Button
             android:id="@+id/deletebutton"
             android:layout_width="80dp"
-            android:layout_height="59dp"
+            android:layout_height="60dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="312dp"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="5dp"
             android:layout_marginTop="8dp"
-            android:text="DELETE ALL" />
+            android:text="DELETE ALL"
+            android:background="@drawable/edit_text_tasarim"/>
     </RelativeLayout>
 
     <LinearLayout
-        android:background="@color/teal_200"
+        android:background="@drawable/baslik_tasarim2"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="75dp">
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="45dp"
@@ -72,13 +77,12 @@
 
     </LinearLayout>
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="121dp"
-        android:id="@+id/myrecycler"/>
+        android:id="@+id/myrecycler" />
 
 </RelativeLayout>
