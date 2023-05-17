@@ -65,6 +65,10 @@ public class FragmentBacaklar extends Fragment implements MyAdapter.SelectedUser
         return view;
     }
 
+
+    void settt(){
+
+    }
     private void setupBackOnPressed()
     {
         requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true)
