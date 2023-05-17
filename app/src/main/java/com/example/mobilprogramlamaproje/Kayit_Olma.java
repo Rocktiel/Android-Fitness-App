@@ -74,6 +74,7 @@ public class Kayit_Olma extends AppCompatActivity
                 surname3=surnamee.getText().toString();
                 password3=passwordd.getText().toString();
                 String imageInByte=uri.toString();
+                System.out.println("zaa-----   "+imageInByte);
 
                 Cursor cursor=db.rawQuery("SELECT * FROM denemeusers ",null);
                 int usernameIndex=cursor.getColumnIndex("username");

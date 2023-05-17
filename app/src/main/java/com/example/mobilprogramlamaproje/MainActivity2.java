@@ -55,6 +55,11 @@ public class MainActivity2 extends AppCompatActivity
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new TrainingFrag()).addToBackStack(null).commit();
                         break;
                     }
+                    case R.id.colari:
+                    {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentler,new Colaries()).addToBackStack(null).commit();
+                        break;
+                    }
                 }
                 return true;
             }
