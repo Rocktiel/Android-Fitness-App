@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity
                 password=Password.getText().toString();
                 if(name.length()==0 || password.length()==0){
 
+
                     Toast.makeText(MainActivity.this, "Boş olamaz.", Toast.LENGTH_SHORT).show();
                 }else{
                     int aa=1;

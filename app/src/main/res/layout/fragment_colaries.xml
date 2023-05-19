@@ -38,9 +38,10 @@
     <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@drawable/baslik_tasarim2"
+        android:layout_height="90dp"
+        android:background="#ccd1d4"
         android:layout_alignParentBottom="true"
+
         >
 
         <TextView
@@ -48,8 +49,8 @@
             android:layout_height="60dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="11dp"
             android:gravity="center"
             android:text="TOTAL CALORİES"
             android:textAlignment="center"
@@ -61,13 +62,12 @@
             android:layout_height="60dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="187dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginLeft="213dp"
+            android:layout_marginTop="11dp"
             android:gravity="center"
             android:text="0"
             android:textAlignment="center"
-            android:textSize="30sp"
-            />
+            android:textSize="30sp" />
 
 
     </RelativeLayout>

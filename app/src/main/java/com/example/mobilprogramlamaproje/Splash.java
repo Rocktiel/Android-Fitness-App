@@ -10,6 +10,8 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public class Splash extends AppCompatActivity
 {
+
+
     LottieAnimationView animationView;
 
     @Override
