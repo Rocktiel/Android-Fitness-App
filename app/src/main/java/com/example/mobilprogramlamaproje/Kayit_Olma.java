@@ -75,14 +75,15 @@ public class Kayit_Olma extends AppCompatActivity
                 name3=namee.getText().toString();
                 surname3=surnamee.getText().toString();
                 password3=passwordd.getText().toString();
-                if(uri!=null){
-                    imageInByte=uri.toString();
+                if(uri==null){
+                    Toast.makeText(Kayit_Olma.this, "Resim seçiniz.", Toast.LENGTH_SHORT).show();
                 }else{
+                    imageInByte=uri.toString();
                     if(username3.length()==0 || name3.length()==0 || surname3.length()==0 || password3.length()==0 ){
-                        Toast.makeText(Kayit_Olma.this, "Boş olamaz.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Kayit_Olma.this, "Lütfen boş olan bilgileri doldurun.", Toast.LENGTH_SHORT).show();
                     }else{
 
-                        Cursor cursor=db.rawQuery("SELECT * FROM denemeusers ",null);
+                        Cursor cursor=db.rawQuery("SELECT * FROM denemeusers WHERE username='"+username3+"' ",null);
                         int usernameIndex=cursor.getColumnIndex("username");
                 /*int nameIndex=cursor.getColumnIndex("name");
                 int surnameIndex=cursor.getColumnIndex("surname");

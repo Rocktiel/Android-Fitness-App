@@ -181,7 +181,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:textSize="20sp"
-            android:text="BASAL METABOLISM RATE"
+            android:text="BASAL METABOLIC RATE"
             android:textColor="#282828" />
     </RelativeLayout>
 
