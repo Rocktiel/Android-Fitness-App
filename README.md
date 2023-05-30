@@ -8,27 +8,39 @@
 ![giriş](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/d7a03b0a-5c8f-4109-bc5b-e7b860585518)
 
 
-//KAYIT SAYFASI
+--KAYIT SAYFASI--
+
+
 ![kayit](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/8861a124-9559-4083-8dfc-1c16526ddc91)
 
 
-//EGZERSİZLER
+--EGZERSİZLER--
+
+
 ![Screenshot_1](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/4e99085e-031b-4e2d-a76a-51a38c93e93a)
 
 
-//EGZERSİZ ARAMA
+--EGZERSİZ ARAMA--
+
+
 ![Screenshot_2](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/d6450104-a972-4f61-93e0-f5dd274986fe)
 
 
-//KARIN KASI HAREKETLER
+--KARIN KASI HAREKETLER--
+
+
 ![Screenshot_3](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/b5b302b6-5b19-4460-86a7-5f5404ceebd0)
 
 
-//GÖĞÜS HAREKETLER
+--GÖĞÜS HAREKETLER--
+
+
 ![Screenshot_4](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/dbfac79c-d9a2-4813-bc1d-aecfa2af5700)
 
 
-//HAREKET 
+--HAREKET--
+
+
 ![Screenshot_16](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/f2c56188-8245-4570-852d-4d2ca4c7466b)
 
 
