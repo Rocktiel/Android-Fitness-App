@@ -7,17 +7,13 @@
 ---
 
 
---KAYIT SAYFASI--
-
-
+# KAYIT SAYFASI
 ![kayit](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/8861a124-9559-4083-8dfc-1c16526ddc91)
+---
 
-
---EGZERSİZLER--
-
-
+# EGZERSİZLER
 ![Screenshot_1](https://github.com/Rocktiel/MobilProgramlamaProje/assets/93122097/4e99085e-031b-4e2d-a76a-51a38c93e93a)
-
+---
 
 --EGZERSİZ ARAMA--
 
