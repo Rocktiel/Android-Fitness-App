@@ -1,5 +1,9 @@
 # MobilProgramlamaProje
 
+# YOUTUBE VİDEO LİNK
+https://youtu.be/rE5x89XNEvI
+---
+
 
 # GİRİŞ SAYFASI
 
