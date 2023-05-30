@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity
                 password=Password.getText().toString();
                 if(name.length()==0 || password.length()==0){
 
-                    Toast.makeText(MainActivity.this, "Boş olamaz.", Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(MainActivity.this, "Kullanıcı adı veya şifre boş olamaz.", Toast.LENGTH_SHORT).show();
                 }else{
                     int aa=1;
                     Cursor cursor=db.rawQuery("SELECT * FROM denemeusers ",null);
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity
                         }
                     }
                     if(aa==1){
-                        Toast.makeText(MainActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Kullanıcı adı veya şifre yanlış.", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

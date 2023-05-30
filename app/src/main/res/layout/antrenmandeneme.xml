@@ -2,9 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="97dp"
-    android:layout_margin="8dp"
+    android:layout_margin="4dp"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white">
+    android:background="@drawable/antrenmanbgg">
 
     <TextView
         android:id="@+id/textViewad"
@@ -25,11 +26,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="216dp"
+        android:layout_marginLeft="222dp"
         android:layout_marginTop="31dp"
+        android:gravity="center"
         android:text="100"
         android:textAlignment="center"
-        android:gravity="center"
 
         android:textSize="20sp" />
 
@@ -39,23 +40,24 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="296dp"
+        android:layout_marginLeft="305dp"
         android:layout_marginTop="31dp"
+        android:gravity="center"
         android:text="100"
         android:textAlignment="center"
-        android:gravity="center"
         android:textSize="20sp" />
+
     <TextView
         android:id="@+id/textViewtekrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="356dp"
+        android:layout_marginLeft="358dp"
         android:layout_marginTop="31dp"
+        android:gravity="center"
         android:text="100"
         android:textAlignment="center"
-        android:gravity="center"
         android:textSize="20sp" />
 
 

@@ -38,6 +38,8 @@ public class Kayit_Olma extends AppCompatActivity
     ImageView  imageView;
     FloatingActionButton floatAction;
     Uri uri;
+
+    String imageInByte;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -73,48 +75,59 @@ public class Kayit_Olma extends AppCompatActivity
                 name3=namee.getText().toString();
                 surname3=surnamee.getText().toString();
                 password3=passwordd.getText().toString();
-                String imageInByte=uri.toString();
-                System.out.println("zaa-----   "+imageInByte);
+                if(uri==null){
+                    Toast.makeText(Kayit_Olma.this, "Resim seçiniz.", Toast.LENGTH_SHORT).show();
+                }else{
+                    imageInByte=uri.toString();
+                    if(username3.length()==0 || name3.length()==0 || surname3.length()==0 || password3.length()==0 ){
+                        Toast.makeText(Kayit_Olma.this, "Lütfen boş olan bilgileri doldurun.", Toast.LENGTH_SHORT).show();
+                    }else{
 
-                Cursor cursor=db.rawQuery("SELECT * FROM denemeusers ",null);
-                int usernameIndex=cursor.getColumnIndex("username");
-                int nameIndex=cursor.getColumnIndex("name");
+                        Cursor cursor=db.rawQuery("SELECT * FROM denemeusers WHERE username='"+username3+"' ",null);
+                        int usernameIndex=cursor.getColumnIndex("username");
+                /*int nameIndex=cursor.getColumnIndex("name");
                 int surnameIndex=cursor.getColumnIndex("surname");
                 int passwordIndex=cursor.getColumnIndex("password");
                 int ageIndex=cursor.getColumnIndex("age");
                 int weightIndex=cursor.getColumnIndex("weight");
-                int heightIndex=cursor.getColumnIndex("height");
+                int heightIndex=cursor.getColumnIndex("height");*/
 
-                while(cursor.moveToNext()) {
-                    username2 = cursor.getString(usernameIndex);
-                    name2 = cursor.getString(nameIndex);
+                        while(cursor.moveToNext()) {
+                            username2 = cursor.getString(usernameIndex);
+                    /*name2 = cursor.getString(nameIndex);
                     surname2 = cursor.getString(surnameIndex);
                     password2 = cursor.getString(passwordIndex);
                     age2 = cursor.getString(ageIndex);
                     weight2 = cursor.getString(weightIndex);
-                    height2 = cursor.getString(heightIndex);
+                    height2 = cursor.getString(heightIndex);*/
 
-                    if(username3.equals(username2)){
-                        Toast.makeText(Kayit_Olma.this, "Bu kullanıcı adı alınmış.", Toast.LENGTH_SHORT).show();
-                        countt=0;
+                            if(username3.equals(username2)){
+                                Toast.makeText(Kayit_Olma.this, "Bu kullanıcı adı alınmış.", Toast.LENGTH_SHORT).show();
+                                countt=0;
+                                break;
 
+                            }
+
+
+
+                        }
+
+                        if(countt==1)
+                        {
+                            db.execSQL("INSERT INTO denemeusers(username,name,surname,password,age,weight,height,image) VALUES('"+username3+"','"+name3+"','"+surname3+"','"+password3+"','"+age+"','"+weight+"','"+height+"','"+imageInByte+"')");
+                            Toast.makeText(Kayit_Olma.this, "Kayıt başarılı.", Toast.LENGTH_SHORT).show();
+                            Intent ii=new Intent(Kayit_Olma.this,MainActivity.class);
+                            startActivity(ii);
+                        }
                     }
 
-
-
                 }
 
-                if(username3.length()==0 || name3.length()==0 || surname3.length()==0 || password3.length()==0 ||imageInByte.length()==0){
-                    Toast.makeText(Kayit_Olma.this, "Boş olamaz.", Toast.LENGTH_SHORT).show();
-
-                } else if(countt==1){
-                    db.execSQL("INSERT INTO denemeusers(username,name,surname,password,age,weight,height,image) VALUES('"+username3+"','"+name3+"','"+surname3+"','"+password3+"','"+age+"','"+weight+"','"+height+"','"+imageInByte+"')");
-                    Toast.makeText(Kayit_Olma.this, "Kayıt başarılı.", Toast.LENGTH_SHORT).show();
-                    Intent ii=new Intent(Kayit_Olma.this,MainActivity.class);
-                    startActivity(ii);
 
 
-                }
+
+
+
 
 
             }

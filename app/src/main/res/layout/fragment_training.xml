@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="@drawable/baslik_tasarim">
+        android:background="#ccd1d4">
 
         <TextView
             android:id="@+id/textView12"
@@ -35,54 +35,65 @@
             android:background="@drawable/edit_text_tasarim"/>
     </RelativeLayout>
 
-    <LinearLayout
-        android:background="@drawable/baslik_tasarim2"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="75dp">
 
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            android:text="NAME"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:layout_weight="20"/>
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:text="WEIGHT"
-            android:textSize="16sp"
-            android:layout_weight="25"/>
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:text="SET"
-            android:textSize="16sp"
-            android:textAlignment="center"
-            android:layout_weight="25"/>
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:textAlignment="center"
-            android:text="REP"
-            android:textSize="16sp"
-            android:layout_weight="25"/>
+        <TableRow>
+            <TextView
+                android:text="NAME"
+                android:textSize="17sp"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:layout_weight="12"
+                android:background="#ccd1d4"/>
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:background="#ccd1d4"
+                android:padding="10dp"
+                android:text="WEIGHT"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:textSize="17sp" />
+
+            <TextView
+                android:text="SET"
+                android:textSize="17sp"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:background="#ccd1d4"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:text="REP"
+                android:textSize="17sp"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:background="#ccd1d4"
+                android:layout_gravity="center_horizontal"/>
 
 
 
 
-    </LinearLayout>
+        </TableRow>
+
+
+
+
+    </TableLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="121dp"
+        android:layout_marginTop="124dp"
         android:id="@+id/myrecycler" />
 
 </RelativeLayout>

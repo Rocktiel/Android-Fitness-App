@@ -130,15 +130,8 @@ public class Edit_Profile extends AppCompatActivity
         });
 
 
-        floatAction=findViewById(R.id.resimguncelleme);
-        floatAction.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                ImagePicker.with(Edit_Profile.this).crop().compress(1024).maxResultSize(1080, 1080).start();
-            }
-        });
+
+
 
     }
 
